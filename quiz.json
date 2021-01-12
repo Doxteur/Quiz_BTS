@@ -1,0 +1,29 @@
+[
+
+    {
+        "id": 1,
+        "nom": "Question1",
+        "question": "Qui est l'auteur des fables de la fontaine ?",
+        "reponses": [{
+                "Propositions": ["Jean de la fontaine", "Jean patrick bernard", "Mozart", "Beethoven"],
+                "ReponsesVraie": "Jean de la fontaine"
+            }
+
+        ]
+    },
+    {
+        "id": 2,
+        "nom": "Question2",
+        "question": "Qui est Elton Jhon ?",
+        "reponses": [{
+                "Propositions": ["Un chanteur", "Un danseur", "Un astronaute", "Un champion de karting"],
+                "ReponsesVraie": "Un chanteur"
+            }
+
+        ]
+    }
+
+
+
+
+]

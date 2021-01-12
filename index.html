@@ -12,6 +12,32 @@
     <h1>Hello world ! </h1>
     <h6>Je suis pierre</h6>
     <h2>Je suis Jimmyy</h2>
+    <button onclick="Quiz()">Click Me</button>
+
+    <script>
+        function Quiz() {
+
+            let randomNumber = Math.floor(Math.random() * 14);
+            fetch("quiz.json")
+                .then(response => response.json())
+                .then(data => {
+
+                    console.log("Voici la question :" + " " + data[j].nom)
+                    console.log(data[j].question)
+                    console.log("Voici les propositions :")
+                    for (let i = 0; i < 4; i++) {
+                        console.log(data[0].reponses[0].Propositions[i]);
+                    }
+                    console.log("\n");
+
+                    // for (let j = 0; j < 2; j++) {
+                    // }
+
+                    // document.getElementById("debug").innerHTML = data.sections.GreekGods[randomNumber].key;
+
+                });
+        }
+    </script>
 </body>
 
 </html>
