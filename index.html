@@ -21,23 +21,24 @@
             fetch("quiz.json")
                 .then(response => response.json())
                 .then(data => {
+                    for (let j = 0; j < 2; j++) {
+                        console.log("Voici la question :" + " " + data[0].nom)
+                        console.log(data[0].question)
+                        console.log("Voici les propositions :")
+                        for (let i = 0; i < 4; i++) {
+                            console.log(data[0].reponses[0].Propositions[i]);
+                        }
+                        console.log("\n");
 
-                    console.log("Voici la question :" + " " + data[0].nom)
-                    console.log(data[0].question)
-                    console.log("Voici les propositions :")
-                    for (let i = 0; i < 4; i++) {
-                        console.log(data[0].reponses[0].Propositions[i]);
-                    }
-                    console.log("\n");
+                        let reponseChoisie = prompt("Choisir reponse 1/2/3/4 :");
+                        if (reponseChoisie == data[j].reponses[0].ReponsesVraie) {
+                            console.log("Bravo !! 1+");
+                        } else {
+                            console.log("Mauvaise Réponse !")
+                        }
+                        console.log("\n");
 
-                    let reponseChoisie = prompt("Choisir reponse 1/2/3/4 :");
-                    if (reponseChoisie == data[0].reponses[0].ReponsesVraie) {
-                        console.log("GG");
-                    } else {
-                        console.log("Mauvaise Réponse")
                     }
-                    // for (let j = 0; j < 2; j++) {
-                    // }
 
                     // document.getElementById("debug").innerHTML = data.sections.GreekGods[randomNumber].key;
 
