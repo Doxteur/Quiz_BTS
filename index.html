@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
     <h1>Hello world ! </h1>
     <h6>Je suis pierre</h6>
@@ -22,11 +23,11 @@
                 .then(response => response.json())
                 .then(data => {
                     for (let j = 0; j < 2; j++) {
-                        console.log("Voici la question :" + " " + data[0].nom)
-                        console.log(data[0].question)
+                        console.log("Voici la question :" + " " + data[j].nom)
+                        console.log(data[j].question)
                         console.log("Voici les propositions :")
                         for (let i = 0; i < 4; i++) {
-                            console.log(data[0].reponses[0].Propositions[i]);
+                            console.log(data[j].reponses[0].Propositions[i]);
                         }
                         console.log("\n");
 

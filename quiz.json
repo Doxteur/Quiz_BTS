@@ -17,8 +17,8 @@
         "nom": "Question2",
         "question": "Qui est Elton Jhon ?",
         "reponses": [{
-                "Propositions": ["Un chanteur", "Un danseur", "Un astronaute", "Un champion de karting"],
-                "ReponsesVraie": 1
+                "Propositions": ["Un Rappeur", "Un chanteur", "Un astronaute", "Un champion de karting"],
+                "ReponsesVraie": 2
             }
 
         ]
