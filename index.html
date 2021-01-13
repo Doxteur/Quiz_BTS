@@ -28,16 +28,16 @@
         </div>
         <div id="reponse">
             <div>
-                <h1></h1>
+                <h1 id="1"></h1>
             </div>
             <div>
-                <h1></h1>
+                <h1 id="2"></h1>
             </div>
             <div>
-                <h1></h1>
+                <h1 id="3"></h1>
             </div>
             <div>
-                <h1></h1>
+                <h1 id="4"></h1>
             </div>
         </div>
     </div>
@@ -67,7 +67,7 @@
                     console.log("Voici les propositions :")
                     for (let i = 0; i < 4; i++) {
                         console.log(data[questionNumber].reponses[0].Propositions[i]);
-
+                        document.getElementById(i + 1).innerHTML = data[questionNumber].reponses[0].Propositions[i];
                     }
                     console.log("\n");
 
