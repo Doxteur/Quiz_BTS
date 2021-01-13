@@ -10,38 +10,78 @@
 
 
 <body>
-    <h1>Hello world ! </h1>
-    <h6>Je suis pierre</h6>
-    <h2>Je suis Jimmyy</h2>
-    <button onclick="Quiz()">Click Me</button>
+    <div id="leftHeader">
+        <h1 id="title"><span>Q</span>uiz</h1>
+        <div id="inner_header">
+            <h1>Createur</h1>
+            <h1>Joueur</h1>
+        </div>
+    </div>
+    <button id="start" onclick="Quiz()">
+        Start the quiz
+    </button>
+    <div id="content">
 
+        <div id="question">
+            <h1 id="titreQuestion"></h1>
+            <h2 id="Question"></h2>
+        </div>
+        <div id="reponse">
+            <div>
+                <h1></h1>
+            </div>
+            <div>
+                <h1></h1>
+            </div>
+            <div>
+                <h1></h1>
+            </div>
+            <div>
+                <h1></h1>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Play Quiz script Temporary -->
     <script>
         function Quiz() {
+            let questionNumber = 0;
 
             fetch("quiz.json")
                 .then(response => response.json())
                 .then(data => {
-                    for (let j = 0; j < 2; j++) {
-                        console.log("Voici la question :" + " " + data[j].nom)
-                        console.log(data[j].question)
-                        console.log("Voici les propositions :")
-                        for (let i = 0; i < 4; i++) {
-                            console.log(data[j].reponses[0].Propositions[i]);
-                        }
-                        console.log("\n");
 
-                        let reponseChoisie = prompt("Choisir reponse 1/2/3/4 :");
-                        if (reponseChoisie == data[j].reponses[0].ReponsesVraie) {
-                            console.log("Bravo !!  1+");
-                        } else {
-                            console.log("Mauvaise Réponse !")
-                        }
-                        console.log("\n");
+                    document.getElementById("start").style.display = "none";
+
+                    document.getElementById("content").style.display = "initial";
+
+                    document.getElementById("titreQuestion").innerHTML = data[questionNumber].nom;
+                    document.getElementById("Question").innerHTML = data[questionNumber].question;
+
+                    console.log("Voici les propositions :")
+                    for (let i = 0; i < 4; i++) {
+                        console.log(data[questionNumber].reponses[0].Propositions[i]);
 
                     }
+                    console.log("\n");
+
+                    // if (reponseChoisie == data[j].reponses[0].ReponsesVraie) {
+                    //     console.log("Bravo !!  1+");
+                    // } else {
+                    //     console.log("Mauvaise Réponse !")
+                    // }
+                    console.log("\n");
+
 
                     // document.getElementById("debug").innerHTML = data.sections.GreekGods[randomNumber].key;
 
+                    questionNumber++;
                 });
         }
     </script>

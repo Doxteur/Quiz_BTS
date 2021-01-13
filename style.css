@@ -5,9 +5,114 @@
 #62D4D4 -> Bleu Clair
 #FFA09E -> Rose
 */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #205D76;
+    color: white;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 45px;
+    padding: 15px;
+    border-radius: 55px;
+}
 
 body {
-    background-color: #FAF9DA;
-    background-color: aliceblue;
+    background-color: white;
+}
+
+#leftHeader {
+    position: absolute;
+    display: table;
+    height: 100vh;
+    width: 10%;
+    background-color: #62D4D4;
+}
+
+#inner_header {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#inner_header h1 {
+    text-align: center;
+    margin: 15px 0 15px 0;
+    padding: 15px;
+    background-color: #205D76;
+    color: white;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 25px;
+
+}
+
+#title {
+    color: white;
+    position: absolute;
+    margin: 30px;
+    font-size: 45px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#title span {
+    color: #FFC122;
+}
+
+#content {
+    display: none;
+
+}
+
+#question {
+    font-family: 'Titillium Web', sans-serif;
+
+    padding-top: 100px;
+    font-size: 27px;
+    text-align: center;
+}
+
+#question h1 {
+    color: #205D76;
+
+}
+
+#question h2 {
+    color: #FFC122;
+}
+
+#reponse {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#reponse div {
+    margin: 50px 150px 0 150px;
+    width: 250px;
+    height: 80px;
+    background-color: #62D4D4;
+    border-radius: 50px;
+    display: table;
+}
+
+#reponse h1 {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 27px;
+    text-align: center;
+    color: white;
+    font-family: 'Titillium Web', sans-serif;
+
 }
