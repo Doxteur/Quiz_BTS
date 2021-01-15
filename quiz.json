@@ -6,7 +6,7 @@
         "question": "Qui est l'auteur des fables de la fontaine ?",
         "reponses": [{
                 "Propositions": ["Jean de la fontaine", "Jean patrick bernard", "Mozart", "Beethoven"],
-                "ReponsesVraie": 1
+                "ReponsesVraie": 0
 
             }
 
@@ -18,7 +18,7 @@
         "question": "Qui est Elton Jhon ?",
         "reponses": [{
                 "Propositions": ["Un Rappeur", "Un chanteur", "Un astronaute", "Un champion de karting"],
-                "ReponsesVraie": 2
+                "ReponsesVraie": 1
             }
 
         ]
