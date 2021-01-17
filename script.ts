@@ -1,15 +1,13 @@
 // Play Quiz script Temporary
-let questionNumber: number = 1;
-let numberOfGoodAnswer = 0;
+var questionNumber:number = 1;
+var numberOfGoodAnswer:number = 0;
 // Jimmy1
-
-function Quiz(reponse?): any {
-    
-    
+function Quiz(reponse) :any{
     fetch("quiz.json")
-    .then(response => response.json())
-    .then(data => {
-            console.log(data[questionNumber -1].reponses[0].ReponsesVraie);
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
 
             if (reponse == 5) {
                 console.log(questionNumber);
@@ -18,41 +16,37 @@ function Quiz(reponse?): any {
                 document.getElementById("content").style.display = "initial";
                 document.getElementById("titreQuestion").innerHTML = data[0].nom;
                 document.getElementById("Question").innerHTML = data[0].question;
-                for (let i = 0; i < 4; i++) {
-                    let emplacement: number = i + 1;
+                for (var i = 0; i < 4; i++) {
+                    var emplacement:number = i + 1;
                     document.getElementById(emplacement.toString()).innerHTML = data[0].reponses[0].Propositions[i];
                 }
                 return 1;
             }
-
-
-
-
             if (reponse == data[questionNumber - 1].reponses[0].ReponsesVraie) {
                 console.log("Bravo !!  1+");
                 numberOfGoodAnswer++;
             } else {
                 console.log("Mauvaise Réponse !");
             }
+
+            if (questionNumber === data.length) {
+                console.log(numberOfGoodAnswer);
+                console.log("Finie !");
+                document.getElementById("ecranFin").style.display = "initial";
+                document.getElementById("nombreDeReponse").innerHTML += numberOfGoodAnswer;
+
+                document.getElementById("content").style.display = "none";
+
+                return;
+            }
             document.getElementById("start").style.display = "none";
             document.getElementById("content").style.display = "initial";
             document.getElementById("titreQuestion").innerHTML = data[questionNumber].nom;
             document.getElementById("Question").innerHTML = data[questionNumber].question;
-
-            for (let i = 0; i < 4; i++) {
-                let emplacement: number = i + 1;
-
+            for (var i = 0; i < 4; i++) {
+                var emplacement:number = i + 1;
                 document.getElementById(emplacement.toString()).innerHTML = data[questionNumber].reponses[0].Propositions[i];
             }
-            if (questionNumber + 1 === data.length) {
-                console.log(numberOfGoodAnswer);
-                console.log("Finie !");
-                return;
-            }
             questionNumber++;
-
-
-
         });
-
 }
