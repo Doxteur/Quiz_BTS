@@ -26,10 +26,10 @@
     {
         "id": 3,
         "nom": "Question3",
-        "question": "Java",
+        "question": "Quel est le langage informatique le plus courant utilisé pour écrire les pages web ?",
         "reponses": [{
-                "Propositions": ["azeaze", "azeaze", "aze aze", "aze aze aze aze"],
-                "ReponsesVraie": 3
+                "Propositions": ["HTML", "HTTP", "Java", "Python"],
+                "ReponsesVraie": 0
             }
 
         ]
@@ -37,9 +37,9 @@
     {
         "id": 4,
         "nom": "Question4",
-        "question": "Qui est nul ?",
+        "question": "Qu’est-ce qu’une adresse IP ?",
         "reponses": [{
-                "Propositions": ["toi", "moi", "réponse C", "réponse D"],
+                "Propositions": ["Un numéro qui identifie chaque matériel informatique", "Le protocole de communication utilisé sur Internet", " L’adresse d’un site web, commençant par 'http://'", "L'adresse d'une maison"],
                 "ReponsesVraie": 0
             }
 

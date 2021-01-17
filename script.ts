@@ -2,6 +2,10 @@
 var questionNumber:number = 1;
 var numberOfGoodAnswer:number = 0;
 // Jimmy1
+function Refresh(){
+    document.location.reload();
+
+}
 function Quiz(reponse) :any{
     fetch("quiz.json")
         .then(function(response) {

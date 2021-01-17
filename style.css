@@ -92,7 +92,6 @@ body {
 
 #question {
     font-family: 'Titillium Web', sans-serif;
-
     padding-top: 100px;
     font-size: 27px;
     text-align: center;
@@ -104,6 +103,9 @@ body {
 }
 
 #question h2 {
+    margin: auto;
+    width: 1050px;
+
     color: #FFC122;
 }
 
@@ -112,14 +114,18 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
 }
 
 #reponse div {
     margin: 50px 150px 0 150px;
-    width: 250px;
-    height: 80px;
+    width: 300px;
+    min-height: 50px;
+    max-height: 150px;
     background-color: #62D4D4;
-    border-radius: 50px;
+    border-radius: 10px;
+    overflow-y: auto;
+    scroll-margin: auto;
     display: table;
 }
 
