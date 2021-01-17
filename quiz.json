@@ -33,6 +33,17 @@
             }
 
         ]
+    },
+    {
+        "id": 4,
+        "nom": "Question4",
+        "question": "Qui est nul ?",
+        "reponses": [{
+                "Propositions": ["toi", "moi", "réponse C", "réponse D"],
+                "ReponsesVraie": 0
+            }
+
+        ]
     }
 
 
