@@ -1,11 +1,15 @@
 // Play Quiz script Temporary
 var questionNumber:number = 1;
 var numberOfGoodAnswer:number = 0;
+let allQuestion : number[] = [0,1,2,3];
 // Jimmy1
 function Refresh(){
     document.location.reload();
 
 }
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
 function Quiz(reponse) :any{
     fetch("quiz.json")
         .then(function(response) {
@@ -14,23 +18,28 @@ function Quiz(reponse) :any{
         .then(function(data) {
             //Start the Game 
             if(reponse == 5){
-            startTheGame(reponse,data);
-            return 1;
+                startTheGame(reponse,data);
+                return 1;
             }
-            //Check if the answer is valid
-            checkWin(reponse,data);
-
+            let nombreRandom = getRandomInt(1,(allQuestion.length))
+            console.log(" Nombre choisie dans le tabeaux " + allQuestion[nombreRandom]);
+            
+            
             //Check if it is the last question
             if(checkFin(reponse,data)){
                 return 1;
             }
+            //Check if the answer is valid
+            checkWin(reponse,data);
 
-            document.getElementById("titreQuestion").innerHTML = data[questionNumber].nom;
-            document.getElementById("Question").innerHTML = data[questionNumber].question;
+            document.getElementById("titreQuestion").innerHTML = data[allQuestion[nombreRandom]].nom;
+            document.getElementById("Question").innerHTML = data[allQuestion[nombreRandom]].question;
             for (var i = 0; i < 4; i++) {
                 var emplacement:number = i + 1;
-                document.getElementById(emplacement.toString()).innerHTML = data[questionNumber].reponses[0].Propositions[i];
+                document.getElementById(emplacement.toString()).innerHTML = data[allQuestion[nombreRandom]].reponses[0].Propositions[i];
             }
+            allQuestion.splice(nombreRandom,1);
+
             questionNumber++;
         });
 
