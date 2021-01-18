@@ -43,8 +43,6 @@ function Quiz(reponse) :any{
 
                 return;
             }
-            document.getElementById("start").style.display = "none";
-            document.getElementById("content").style.display = "initial";
             document.getElementById("titreQuestion").innerHTML = data[questionNumber].nom;
             document.getElementById("Question").innerHTML = data[questionNumber].question;
             for (var i = 0; i < 4; i++) {
