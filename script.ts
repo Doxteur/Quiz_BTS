@@ -17,9 +17,10 @@ function Quiz(reponse) :any{
             startTheGame(reponse,data);
             return 1;
             }
-
+            //Check if the answer is valid
             checkWin(reponse,data);
 
+            //Check if it is the last question
             if(checkFin(reponse,data)){
                 return 1;
             }
