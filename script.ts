@@ -2,6 +2,8 @@
 var questionNumber:number = 1;
 var numberOfGoodAnswer:number = 0;
 let allQuestion : number[] = [0,1,2,3];
+let nombreRandom = getRandomInt(0,(allQuestion.length - 1))
+
 // Jimmy1
 function Refresh(){
     document.location.reload();
@@ -17,20 +19,22 @@ function Quiz(reponse) :any{
         })
         .then(function(data) {
             //Start the Game 
-            if(reponse == 5){
-                startTheGame(reponse,data);
-                return 1;
-            }
-            let nombreRandom = getRandomInt(1,(allQuestion.length))
             console.log(" Nombre choisie dans le tabeaux " + allQuestion[nombreRandom]);
             
+            if(reponse == 5){
+                startTheGame(reponse,data,nombreRandom,allQuestion);
+                return 1;
+            }
             
+            checkWin(reponse,data,nombreRandom,allQuestion);
             //Check if it is the last question
             if(checkFin(reponse,data)){
                 return 1;
             }
             //Check if the answer is valid
-            checkWin(reponse,data);
+            allQuestion.splice(nombreRandom,1);
+
+            nombreRandom = getRandomInt(0,(allQuestion.length -1))
 
             document.getElementById("titreQuestion").innerHTML = data[allQuestion[nombreRandom]].nom;
             document.getElementById("Question").innerHTML = data[allQuestion[nombreRandom]].question;
@@ -38,8 +42,7 @@ function Quiz(reponse) :any{
                 var emplacement:number = i + 1;
                 document.getElementById(emplacement.toString()).innerHTML = data[allQuestion[nombreRandom]].reponses[0].Propositions[i];
             }
-            allQuestion.splice(nombreRandom,1);
-
+            console.log(allQuestion)
             questionNumber++;
         });
 
@@ -47,23 +50,23 @@ function Quiz(reponse) :any{
 
 }
 
-function startTheGame(reponse,data){
+function startTheGame(reponse,data,nombreRandom,allQuestion){
 
         console.log(questionNumber);
         console.log("Start of the quiz");
         document.getElementById("start").style.display = "none";
         document.getElementById("content").style.display = "initial";
-        document.getElementById("titreQuestion").innerHTML = data[0].nom;
-        document.getElementById("Question").innerHTML = data[0].question;
+        document.getElementById("titreQuestion").innerHTML = data[allQuestion[nombreRandom]].nom;
+        document.getElementById("Question").innerHTML = data[allQuestion[nombreRandom]].question;
         for (var i = 0; i < 4; i++) {
             var emplacement:number = i + 1;
-            document.getElementById(emplacement.toString()).innerHTML = data[0].reponses[0].Propositions[i];
+            document.getElementById(emplacement.toString()).innerHTML = data[allQuestion[nombreRandom]].reponses[0].Propositions[i];
         }
 
 }
 
-function checkWin(reponse, data){
-    if (reponse == data[questionNumber - 1].reponses[0].ReponsesVraie) {
+function checkWin(reponse, data , nombreRandom,allQuestion){
+    if (reponse == data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie) {
         console.log("Bravo !!  1+");
         numberOfGoodAnswer++;
     } else {
