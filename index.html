@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- AHAHAHHAHAHAH -->
 
 <head>
     <meta charset="UTF-8">
@@ -11,14 +10,15 @@
 
 
 <body>
+    <script src="script.js"></script>
     <div id="leftHeader">
-        <h1 id="title"><span>Q</span>uiz</h1>
+        <h1 id="title" onclick="Refresh()"><span>Q</span>uiz</h1>
         <div id="inner_header">
             <h1>Createur</h1>
             <h1>Joueur</h1>
         </div>
     </div>
-    <button id="start" onclick="Quiz()">
+    <button id="start" onclick="Quiz(5)">
         Start the quiz
     </button>
     <div id="content">
@@ -27,23 +27,28 @@
             <h1 id="titreQuestion"></h1>
             <h2 id="Question"></h2>
         </div>
+
         <div id="reponse">
             <div>
-                <h1 id="1" onclick="Quiz(1)"></h1>
+                <h1 id="1" onclick="Quiz(0)"></h1>
             </div>
             <div>
-                <h1 id="2" onclick="Quiz(2)"></h1>
+                <h1 id="2" onclick="Quiz(1)"></h1>
             </div>
             <div>
-                <h1 id="3" onclick="Quiz(3)"></h1>
+                <h1 id="3" onclick="Quiz(2)"></h1>
             </div>
             <div>
-                <h1 id="4" onclick="Quiz(4)"></h1>
+                <h1 id="4" onclick="Quiz(3)"></h1>
             </div>
         </div>
     </div>
+    <div id="ecranFin">
+        <h1 id="finText">FIN</h1>
+        <h1 id="nombreDeReponse">Nombre de bonne réponse : </h1>
+    </div>
 
-    <script src="script.js"></script>
+
 
 </body>
 
