@@ -30,7 +30,6 @@ function Quiz(reponse) {
         //Check if the answer is valid
         allQuestion.splice(nombreRandom, 1);
         nombreRandom = getRandomInt(0, (allQuestion.length - 1));
-        document.getElementById("titreQuestion").innerHTML = data[allQuestion[nombreRandom]].nom;
         document.getElementById("Question").innerHTML = data[allQuestion[nombreRandom]].question;
         for (var i = 0; i < 4; i++) {
             var emplacement = i + 1;
@@ -45,7 +44,6 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
     console.log("Start of the quiz");
     document.getElementById("start").style.display = "none";
     document.getElementById("content").style.display = "initial";
-    document.getElementById("titreQuestion").innerHTML = data[allQuestion[nombreRandom]].nom;
     document.getElementById("Question").innerHTML = data[allQuestion[nombreRandom]].question;
     for (var i = 0; i < 4; i++) {
         var emplacement = i + 1;
@@ -71,3 +69,23 @@ function checkFin(reponse, data) {
         return 1;
     }
 }
+//Pierr
+var reponseM = [];
+function multipleReponse(nombreChoisie) {
+    console.log("TEST1", reponseM, "YA AUSSI LUI :", nombreChoisie);
+    if (reponseM[0] = nombreChoisie) {
+        reponseM.splice(0, 1);
+    }
+    else if (reponseM[1] = nombreChoisie) {
+        reponseM.splice(3, 1);
+    }
+    else if (reponseM[2] = nombreChoisie) {
+        reponseM.splice(3, 1);
+    }
+    else if (reponseM[3] = nombreChoisie) {
+        reponseM.splice(3, 1);
+    }
+    reponseM.push(nombreChoisie);
+    console.log(reponseM);
+}
+//function valide() {}
