@@ -52,6 +52,7 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
 }
 function checkWin(reponse, data, nombreRandom, allQuestion) {
     if (reponse == data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie) {
+        document.getElementById("reponsebonne").style.display = "table";
         console.log("Bravo !!  1+");
         numberOfGoodAnswer++;
     }

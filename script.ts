@@ -25,6 +25,7 @@ function Quiz(reponse) {
         checkWin(reponse, data, nombreRandom, allQuestion);
         //Check if it is the last question
         if (checkFin(reponse, data)) {
+
             return 1;
         }
         //Check if the answer is valid
@@ -51,7 +52,10 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
     }
 }
 function checkWin(reponse, data, nombreRandom, allQuestion) {
+
     if (reponse == data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie) {
+        
+        document.getElementById("reponsebonne").style.display = "table";
         console.log("Bravo !!  1+");
         numberOfGoodAnswer++;
     }
