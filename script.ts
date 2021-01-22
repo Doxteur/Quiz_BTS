@@ -83,20 +83,22 @@ function checkFin(reponse, data) {
 //Pierr
 var reponseM = [];
 function multipleReponse(nombreChoisie) {
-    console.log("TEST1", reponseM, "YA AUSSI LUI :", nombreChoisie);
-    if (reponseM[0] = nombreChoisie) {
-        reponseM.splice(0, 1);
-    }
-    else if (reponseM[1] = nombreChoisie) {
-        reponseM.splice(3, 1);
-    }
-    else if (reponseM[2] = nombreChoisie) {
-        reponseM.splice(3, 1);
-    }
-    else if (reponseM[3] = nombreChoisie) {
-        reponseM.splice(3, 1);
+    
+
+    
+    for (let i = 0; i < 4; i++) {
+        if (reponseM[i] == nombreChoisie) {               
+            reponseM.splice(i,1);
+            console.log("Dans le tableau il y a " + reponseM)
+            return 0;
+        } 
+        
     }
     reponseM.push(nombreChoisie);
-    console.log(reponseM);
+    
+    console.log("Dans le tableau il y a " + reponseM);
+    
 }
-//function valide() {}
+function valide() {
+    return (reponseM);
+}
