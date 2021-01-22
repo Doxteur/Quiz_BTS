@@ -53,10 +53,15 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
 function checkWin(reponse, data, nombreRandom, allQuestion) {
     if (reponse == data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie) {
         document.getElementById("reponsebonne").style.display = "table";
+        document.getElementById("reponsebonne").style.backgroundColor = "Green";
+        document.getElementById("valiationreponse").innerHTML = "Bonne Réponse(s)";
         console.log("Bravo !!  1+");
         numberOfGoodAnswer++;
     }
     else {
+        document.getElementById("reponsebonne").style.display = "table";
+        document.getElementById("reponsebonne").style.backgroundColor = "Red";
+        document.getElementById("valiationreponse").innerHTML = "Mauvaise Réponse(s)";
         console.log("Mauvaise Réponse !");
     }
 }
@@ -83,6 +88,6 @@ function multipleReponse(nombreChoisie) {
     reponseM.push(nombreChoisie);
     console.log("Dans le tableau il y a " + reponseM);
 }
-function valide(data) {
-    return checkWin(reponseM, data, nombreRandom, allQuestion);
+function valide() {
+    return (reponseM);
 }

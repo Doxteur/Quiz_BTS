@@ -57,6 +57,9 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
         
         document.getElementById("reponsebonne").style.display = "table";
         
+        document.getElementById("reponsebonne").style.backgroundColor = "Green";
+
+        document.getElementById("valiationreponse").innerHTML = "Bonne Réponse(s)";
         
         console.log("Bravo !!  1+");
         numberOfGoodAnswer++;
@@ -64,9 +67,9 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
     else {
         document.getElementById("reponsebonne").style.display = "table";
 
-        document.getElementById("reponsebonne").style.backgroundColor = "blue";
+        document.getElementById("reponsebonne").style.backgroundColor = "Red";
 
-        document.getElementById("reponsebonne").innerHTML = "Mauvaise Réponse(s)";
+        document.getElementById("valiationreponse").innerHTML = "Mauvaise Réponse(s)";
         console.log("Mauvaise Réponse !");
     }
 }
