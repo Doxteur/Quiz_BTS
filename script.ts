@@ -56,10 +56,17 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
     if (reponse == data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie) {
         
         document.getElementById("reponsebonne").style.display = "table";
+        
+        
         console.log("Bravo !!  1+");
         numberOfGoodAnswer++;
     }
     else {
+        document.getElementById("reponsebonne").style.display = "table";
+
+        document.getElementById("reponsebonne").style.backgroundColor = "blue";
+
+        document.getElementById("reponsebonne").innerHTML = "Mauvaise Réponse(s)";
         console.log("Mauvaise Réponse !");
     }
 }

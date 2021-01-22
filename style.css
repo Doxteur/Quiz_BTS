@@ -153,8 +153,8 @@ body {
     font-weight: bold;
     font-family: 'Titillium Web', sans-serif;
     display: table;
-    display: hidden;
-    animation: opacity 1s alternate;
+    display: none;
+    animation: linear opacity 1s alternate;
 
 
 }
@@ -162,13 +162,17 @@ body {
 
 @keyframes opacity {
     0% {
+        transform: translate(-100%);
         opacity: 0;
 
     }
 
+
     100% {
-        opacity: 100%;
+        opacity: 50%;
+
     }
+
 }
 
 #reponsebonne h1 {
