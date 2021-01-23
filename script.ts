@@ -55,13 +55,16 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
 function checkWin(reponse, data, nombreRandom, allQuestion) {
     let additionBonneReponseDonnee = 0;
     let addtionBonneReponseQuestion = 0;
-    for(let i = 0; i < 3; i++){
-        addtionBonneReponseQuestion += data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie[i];
+    for(let i = 0; i < reponse.length; i++){
         additionBonneReponseDonnee += reponse[i];
         
     }
+    for(let i = 0; i < data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie.length; i++){
+        addtionBonneReponseQuestion += data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie[i];
+        
+    }
     console.log("reponsedonne" + additionBonneReponseDonnee);
-    console.log("reponsedonne" + addtionBonneReponseQuestion);
+    console.log("reponsedonnedemander" + addtionBonneReponseQuestion);
     
     if(additionBonneReponseDonnee == addtionBonneReponseQuestion){   
         

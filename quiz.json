@@ -6,7 +6,7 @@
         "question": "Qui est l'auteur des fables de la fontaine ?",
         "reponses": [{
                 "Propositions": ["Jean de la fontaine", "Jean patrick bernard", "Mozart", "Beethoven"],
-                "ReponsesVraie": [3, 1, 2]
+                "ReponsesVraie": [0]
 
             }
 
@@ -18,7 +18,7 @@
         "question": "Qui est Elton Jhon ?",
         "reponses": [{
                 "Propositions": ["Un Rappeur", "Un chanteur", "Un astronaute", "Un champion de karting"],
-                "ReponsesVraie": [3, 1, 2]
+                "ReponsesVraie": [3, 1]
             }
 
         ]
@@ -29,7 +29,7 @@
         "question": "Quel est le langage informatique le plus courant utilisé pour écrire les pages web ?",
         "reponses": [{
                 "Propositions": ["HTML", "HTTP", "Java", "Python"],
-                "ReponsesVraie": [3, 1, 2]
+                "ReponsesVraie": [3, 1]
             }
 
         ]
@@ -40,7 +40,7 @@
         "question": "Qu’est-ce qu’une adresse IP ?",
         "reponses": [{
                 "Propositions": ["Un numéro qui identifie chaque matériel informatique", "Le protocole de communication utilisé sur Internet", " L’adresse d’un site web, commençant par 'http://'", "L'adresse d'une maison"],
-                "ReponsesVraie": [0, 1, 3]
+                "ReponsesVraie": [0, 1]
             }
 
         ]
