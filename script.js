@@ -1,7 +1,7 @@
 // Play Quiz script Temporary
 var questionNumber = 1;
 var numberOfGoodAnswer = 0;
-var allQuestion = [0, 1, 2, 3];
+var allQuestion = [0, 1, 2, 3]; // A changer
 var nombreRandom = getRandomInt(0, (allQuestion.length - 1));
 // Jimmy1
 function Refresh() {
@@ -49,7 +49,16 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
     }
 }
 function checkWin(reponse, data, nombreRandom, allQuestion) {
-    if (reponse.length == data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie.length) {
+    var additionBonneReponseDonnee = 0;
+    var addtionBonneReponseQuestion = 0;
+    for (var i = 0; i < 3; i++) {
+        addtionBonneReponseQuestion += data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie[i];
+        additionBonneReponseDonnee += reponse[i];
+    }
+    console.log("reponsedonne" + additionBonneReponseDonnee);
+    console.log("reponsedonne" + addtionBonneReponseQuestion);
+    if (additionBonneReponseDonnee == addtionBonneReponseQuestion) {
+        console.log(additionBonneReponseDonnee);
         console.log("Meme taille");
         document.getElementById("reponsebonne").style.display = "table";
         document.getElementById("reponsebonne").style.backgroundColor = "Green";
