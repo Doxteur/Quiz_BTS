@@ -35,12 +35,10 @@ function Quiz(reponse) {
             var emplacement = i + 1;
             document.getElementById(emplacement.toString()).innerHTML = data[allQuestion[nombreRandom]].reponses[0].Propositions[i];
         }
-        console.log(allQuestion);
         questionNumber++;
     });
 }
 function startTheGame(reponse, data, nombreRandom, allQuestion) {
-    console.log(questionNumber);
     console.log("Start of the quiz");
     document.getElementById("start").style.display = "none";
     document.getElementById("content").style.display = "initial";
@@ -51,18 +49,22 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
     }
 }
 function checkWin(reponse, data, nombreRandom, allQuestion) {
-    if (reponse == data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie) {
+    if (reponse.length == data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie.length) {
+        console.log("Meme taille");
         document.getElementById("reponsebonne").style.display = "table";
         document.getElementById("reponsebonne").style.backgroundColor = "Green";
         document.getElementById("valiationreponse").innerHTML = "Bonne Réponse(s)";
         console.log("Bravo !!  1+");
         numberOfGoodAnswer++;
+        return 1;
     }
     else {
         document.getElementById("reponsebonne").style.display = "table";
         document.getElementById("reponsebonne").style.backgroundColor = "Red";
         document.getElementById("valiationreponse").innerHTML = "Mauvaise Réponse(s)";
         console.log("Mauvaise Réponse !");
+        console.log("Pas la meme taille");
+        return 0;
     }
 }
 function checkFin(reponse, data) {
@@ -82,12 +84,18 @@ function multipleReponse(nombreChoisie) {
         if (reponseM[i] == nombreChoisie) {
             reponseM.splice(i, 1);
             console.log("Dans le tableau il y a " + reponseM);
+            document.getElementById((nombreChoisie + 1).toString()).style.border = "none";
             return 0;
         }
     }
     reponseM.push(nombreChoisie);
+    document.getElementById((nombreChoisie + 1).toString()).style.border = "solid 4px green";
     console.log("Dans le tableau il y a " + reponseM);
 }
-function valide() {
-    return (reponseM);
+function validation() {
+    for (var i = 1; i <= 4; i++) {
+        document.getElementById(i.toString()).style.border = "none";
+    }
+    Quiz(reponseM);
+    reponseM = [];
 }
