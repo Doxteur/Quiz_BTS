@@ -10,6 +10,7 @@ function Refresh() {
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
+//Permet de récupèrer les informations dans le json
 function Quiz(reponse) {
     fetch("quiz.json")
         .then(function (response) {
@@ -22,6 +23,7 @@ function Quiz(reponse) {
             startTheGame(reponse, data, nombreRandom, allQuestion);
             return 1;
         }
+        //Verifie la validité des réponses
         checkWin(reponse, data, nombreRandom, allQuestion);
         //Check if it is the last question
         if (checkFin(reponse, data)) {
@@ -49,16 +51,18 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
     }
 }
 function checkWin(reponse, data, nombreRandom, allQuestion) {
+    //Reponse donnee par l'utilisateur
     var additionBonneReponseDonnee = 0;
+    //Reponse demander par la question
     var addtionBonneReponseQuestion = 0;
+    //Calcul en ajoutant dans la variable chaque valeur du tableau puis comparaison de la somme entre les deux tableaux 
     for (var i = 0; i < reponse.length; i++) {
         additionBonneReponseDonnee += reponse[i];
     }
     for (var i = 0; i < data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie.length; i++) {
         addtionBonneReponseQuestion += data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie[i];
     }
-    console.log("reponsedonne" + additionBonneReponseDonnee);
-    console.log("reponsedonnedemander" + addtionBonneReponseQuestion);
+    // Détermine si les réponses sont bonnes
     if (additionBonneReponseDonnee == addtionBonneReponseQuestion) {
         console.log(additionBonneReponseDonnee);
         console.log("Meme taille");
@@ -78,6 +82,7 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
         return 0;
     }
 }
+// Vérifie si c'est la derniere question et change en fonction
 function checkFin(reponse, data) {
     if (questionNumber === data.length) {
         console.log(numberOfGoodAnswer);
