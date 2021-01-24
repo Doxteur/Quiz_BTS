@@ -12,11 +12,14 @@
 
 <body>
 
-    <script src="script.js"></script>
+    <img src="Images/hamburger.png" alt="Hamburger" id="hamburger">
+
     <div id="leftHeader">
         <h1 id="title" onclick="Refresh()"><span>Q</span>uiz</h1>
         <div id="inner_header">
-            <h1>Createur</h1>
+            <a href="createur.html">
+                <h1>Createur</h1>
+            </a>
             <h1>Joueur</h1>
         </div>
     </div>
@@ -32,10 +35,10 @@
 
         <div id="reponse">
             <div>
-                <h1 id="1" onclick="Quiz(0)"></h1>
+                <h1 id="1" onclick="multipleReponse(0)"></h1>
             </div>
             <div>
-                <h1 id="2" onclick="Quiz(1)"></h1>
+                <h1 id="2" onclick="multipleReponse(1)"></h1>
             </div>
             <div>
                 <h1 id="3" onclick="multipleReponse(2)"></h1>
@@ -44,7 +47,7 @@
                 <h1 id="4" onclick="multipleReponse(3)"></h1>
             </div>
             <div>
-                <h1 id="Valide" onclick="valide()"></h1>
+                <h1 id="Valide" onclick="validation()">Validé</h1>
             </div>
         </div>
     </div>
@@ -53,9 +56,10 @@
         <h1 id="nombreDeReponse">Nombre de bonne réponse : </h1>
     </div>
     <div id="reponsebonne">
-        <h1>Bonne réponse</h1>
+        <h1 id="valiationreponse">Bonne réponse(s)</h1>
     </div>
 
+    <script src="script.js"></script>
 
 </body>
 
