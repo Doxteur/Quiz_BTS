@@ -6,6 +6,7 @@
 
 #leftHeader {
     position: absolute;
+    left: 0;
     display: table;
     height: 100vh;
     width: 10%;
@@ -42,9 +43,12 @@
 
 
 #allQuestion {
+    position: absolute;
+    right: 0;
+    width: 90%;
     display: flex;
     justify-content: center;
-
+    flex-wrap: wrap;
 
 }
 

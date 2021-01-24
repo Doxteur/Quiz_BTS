@@ -142,3 +142,16 @@ function validation(){
     Quiz(reponseM);
     reponseM = [];
 }
+
+
+
+
+//Animation HTML
+
+const btn = document.getElementById("hamburger");
+const nav = document.getElementById("leftHeader")
+    btn.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        btn.classList.toggle("active");
+
+    });

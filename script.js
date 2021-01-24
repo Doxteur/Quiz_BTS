@@ -114,3 +114,10 @@ function validation() {
     Quiz(reponseM);
     reponseM = [];
 }
+//Animation HTML
+var btn = document.getElementById("hamburger");
+var nav = document.getElementById("leftHeader");
+btn.addEventListener("click", function () {
+    nav.classList.toggle("active");
+    btn.classList.toggle("active");
+});
