@@ -26,7 +26,7 @@
     {
         "id": 3,
         "nom": "Question3",
-        "question": "Quels sont les langages informatique le plus utilisé dans les pages web ?",
+        "question": "Quels sont les langages informatique les plus utilisés dans les pages web ?",
         "reponses": [{
                 "Propositions": ["HTML", "PHP", "CSS", "Python"],
                 "ReponsesVraie": [0, 1, 2]

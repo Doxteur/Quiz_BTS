@@ -52,9 +52,9 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
 }
 function checkWin(reponse, data, nombreRandom, allQuestion) {
     //Reponse donnee par l'utilisateur
-    var additionBonneReponseDonnee = 0;
+    var additionBonneReponseDonnee = null;
     //Reponse demander par la question
-    var addtionBonneReponseQuestion = 0;
+    var addtionBonneReponseQuestion = null;
     //Calcul en ajoutant dans la variable chaque valeur du tableau puis comparaison de la somme entre les deux tableaux 
     for (var i = 0; i < reponse.length; i++) {
         additionBonneReponseDonnee += reponse[i];
@@ -63,7 +63,7 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
         addtionBonneReponseQuestion += data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie[i];
     }
     // Détermine si les réponses sont bonnes
-    if (additionBonneReponseDonnee == addtionBonneReponseQuestion) {
+    if ((additionBonneReponseDonnee == addtionBonneReponseQuestion) && additionBonneReponseDonnee != null) {
         console.log(additionBonneReponseDonnee);
         console.log("Meme taille");
         document.getElementById("reponsebonne").style.display = "table";
@@ -93,7 +93,6 @@ function checkFin(reponse, data) {
         return 1;
     }
 }
-//Pierr
 var reponseM = [];
 function multipleReponse(nombreChoisie) {
     for (var i = 0; i < 4; i++) {
