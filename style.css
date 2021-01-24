@@ -5,11 +5,19 @@
 #62D4D4 -> Bleu Clair
 #FFA09E -> Rose
 */
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
+
+
 
 * {
     margin: 0;
     padding: 0;
+
+}
+
+a {
+    color: none;
+    text-decoration: none;
 
 }
 
