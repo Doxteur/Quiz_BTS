@@ -6,6 +6,7 @@
 #FFA09E -> Rose
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 
 
 
@@ -15,11 +16,31 @@
 
 }
 
+body {
+    background-image: url("Images/Group\ 1.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+
 a {
     color: none;
     text-decoration: none;
 
 }
+
+#titreQuiz {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: white;
+    font-family: 'Titillium Web', sans-serif;
+}
+
 
 #ecranFin {
     text-align: center;
