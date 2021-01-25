@@ -104,7 +104,7 @@ function multipleReponse(nombreChoisie) {
         }
     }
     reponseM.push(nombreChoisie);
-    document.getElementById((nombreChoisie + 1).toString()).style.border = "solid 4px green";
+    document.getElementById((nombreChoisie + 1).toString()).style.border = "solid 4px black";
     console.log("Dans le tableau il y a " + reponseM);
 }
 function validation() {
