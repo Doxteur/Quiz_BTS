@@ -37,7 +37,6 @@ html,
 body {
     text-align: center;
     height: 100%;
-    overflow: hidden;
 }
 
 .svg-wrapper {
@@ -261,6 +260,7 @@ body {
     font-weight: bold;
     font-family: 'Titillium Web', sans-serif;
     display: none;
+    transition: display ease-in-out 0.5s;
 
 
 }

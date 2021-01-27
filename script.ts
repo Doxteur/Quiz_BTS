@@ -86,6 +86,7 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
         $("#reponsebonne").toggleClass("anim");
         setTimeout(function(){
             $("#reponsebonne").toggleClass("anim");
+            
 
         },2500)
         
@@ -101,8 +102,11 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
        
         $("#reponsebonne").toggleClass("anim");
         setTimeout(function(){
-            $("#reponsebonne").toggleClass("anim");
 
+
+            $("#reponsebonne").toggleClass("anim");
+            
+            
         },2500);
         document.getElementById("reponsebonne").style.backgroundColor = "Red";
 
