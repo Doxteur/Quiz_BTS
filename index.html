@@ -12,7 +12,7 @@
 
 <body>
 
-    <img src="Images/hamburger.png" alt="Hamburger" id="hamburger">
+    <img src="Images/hamburger.png" alt="Hamburger" id="hamburger" style="display: none;">
 
     <div id="leftHeader">
         <h1 id="title" onclick="Refresh()"><span>Q</span>uiz</h1>
@@ -23,9 +23,18 @@
             <h1>Joueur</h1>
         </div>
     </div>
+    <div class="svg-wrapper" id="wrapper">
+        <svg height="90" width="420" xmlns="http://www.w3.org/2000/svg">
+            <rect class="shape" height="90" width="420" />
+            <div class="text" id="start" onclick="Quiz(5)">LE QUIZ</div>
+        </svg>
+    </div>
+    <!-- 
     <button id="start" onclick="Quiz(5)">
-        Start the quiz
+             Start the quiz
     </button>
+    -->
+
     <div id="content">
 
         <div id="question">
@@ -34,19 +43,19 @@
         </div>
 
         <div id="reponse">
-            <div>
+            <div class="div1">
                 <h1 id="1" onclick="multipleReponse(0)"></h1>
             </div>
-            <div>
+            <div class="div2">
                 <h1 id="2" onclick="multipleReponse(1)"></h1>
             </div>
-            <div>
+            <div class="div3">
                 <h1 id="3" onclick="multipleReponse(2)"></h1>
             </div>
-            <div>
+            <div class="div4">
                 <h1 id="4" onclick="multipleReponse(3)"></h1>
             </div>
-            <div>
+            <div class="Valide">
                 <h1 id="Valide" onclick="validation()">Validé</h1>
             </div>
         </div>

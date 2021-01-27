@@ -6,6 +6,7 @@
 #FFA09E -> Rose
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 
 
 
@@ -15,12 +16,67 @@
 
 }
 
+body {
+    background-image: url("Images/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+
 a {
     color: none;
     text-decoration: none;
 
 }
 
+/* Implementation author : Zach Sauzier*/
+
+html,
+body {
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.svg-wrapper {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width: 420px;
+    cursor: pointer;
+
+}
+
+.shape {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+    fill: transparent;
+    stroke: #FFC122;
+    border-bottom: 5px solid black;
+    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+
+.text {
+    font-family: sans-serif;
+    font-size: 72px;
+    line-height: 9px;
+    letter-spacing: 8px;
+    color: #fff;
+    top: -55px;
+    position: relative;
+}
+
+.svg-wrapper:hover .shape {
+    stroke-width: 8px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1050;
+}
+
+/* Fin implementation */
 #ecranFin {
     text-align: center;
     color: #205D76;
@@ -54,11 +110,12 @@ button:not(#hamburger) {
 }
 
 body {
-    background-color: white;
+    background-color: #f7e8d8d5;
 }
 
 #hamburger {
     position: absolute;
+    left: 0;
     width: 50px;
     height: 50px;
     margin: 10px;
@@ -73,7 +130,7 @@ body {
     position: absolute;
     display: table;
     height: 100vh;
-    background-color: #62D4D4;
+    background-color: #3A7BDE;
     transform: translateX(-200px);
     transition: transform 1s;
 
@@ -88,7 +145,7 @@ body {
 #hamburger.active {
 
     transition: transform 1s;
-    transform: translateX(150px);
+    transform: translateX(135px);
 
 }
 
@@ -128,7 +185,7 @@ body {
 #question {
 
     font-family: 'Titillium Web', sans-serif;
-    padding-top: 100px;
+    padding-top: 10%;
     font-size: 27px;
     text-align: center;
 }
@@ -140,7 +197,8 @@ body {
 }
 
 #reponse {
-    padding-top: 50px;
+
+    padding-top: 3.5%;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -148,15 +206,35 @@ body {
 }
 
 #reponse div {
+    cursor: pointer;
     margin: 50px 150px 0 150px;
     width: 300px;
     min-height: 50px;
     max-height: 150px;
-    background-color: #62D4D4;
     border-radius: 10px;
     overflow-y: auto;
     scroll-margin: auto;
     display: table;
+}
+
+.div1 {
+    background-color: #E94D4D;
+}
+
+.div2 {
+    background-color: #4ACBDE;
+}
+
+.div3 {
+    background-color: #E7DF27;
+}
+
+.div4 {
+    background-color: #62D62C;
+}
+
+.Valide {
+    background-color: #8211B8;
 }
 
 #reponse h1 {
