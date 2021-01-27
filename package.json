@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Doxteur/Quiz_BTS/issues"
   },
-  "homepage": "https://github.com/Doxteur/Quiz_BTS#readme"
+  "homepage": "https://github.com/Doxteur/Quiz_BTS#readme",
+  "devDependencies": {
+    "@types/jquery": "^3.5.5"
+  }
 }

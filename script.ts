@@ -80,7 +80,15 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
     if((additionBonneReponseDonnee == addtionBonneReponseQuestion) && additionBonneReponseDonnee != null){           
         console.log(additionBonneReponseDonnee);
         console.log("Meme taille");
-        document.getElementById("reponsebonne").style.display = "table";
+
+        // document.getElementById("reponsebonne").classList.toggle("anim");
+    
+        $("#reponsebonne").toggleClass("anim");
+        setTimeout(function(){
+            $("#reponsebonne").toggleClass("anim");
+
+        },2500)
+        
         document.getElementById("reponsebonne").style.backgroundColor = "Green";
         document.getElementById("valiationreponse").innerHTML = "Bonne Réponse(s)";
 
@@ -90,8 +98,12 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
     }
 
     else{
-        document.getElementById("reponsebonne").style.display = "table";
+       
+        $("#reponsebonne").toggleClass("anim");
+        setTimeout(function(){
+            $("#reponsebonne").toggleClass("anim");
 
+        },2500);
         document.getElementById("reponsebonne").style.backgroundColor = "Red";
 
         document.getElementById("valiationreponse").innerHTML = "Mauvaise Réponse(s)";
