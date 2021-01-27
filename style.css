@@ -17,7 +17,7 @@
 }
 
 body {
-    background-image: url("Images/Group\ 1.png");
+    background-image: url("Images/background.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -31,17 +31,52 @@ a {
 
 }
 
-#titreQuiz {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 100px;
-    color: white;
-    font-family: 'Titillium Web', sans-serif;
+/* Implementation author : Zach Sauzier*/
+
+html,
+body {
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
 }
 
+.svg-wrapper {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width: 420px;
+    cursor: pointer;
 
+}
+
+.shape {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+    fill: transparent;
+    stroke: #FFC122;
+    border-bottom: 5px solid black;
+    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+
+.text {
+    font-family: sans-serif;
+    font-size: 72px;
+    line-height: 9px;
+    letter-spacing: 8px;
+    color: #fff;
+    top: -55px;
+    position: relative;
+}
+
+.svg-wrapper:hover .shape {
+    stroke-width: 8px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1050;
+}
+
+/* Fin implementation */
 #ecranFin {
     text-align: center;
     color: #205D76;
@@ -80,6 +115,7 @@ body {
 
 #hamburger {
     position: absolute;
+    left: 0;
     width: 50px;
     height: 50px;
     margin: 10px;
