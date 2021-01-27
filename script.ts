@@ -19,7 +19,6 @@ function Quiz(reponse) {
     })
         .then(function (data) {
         //Start the Game 
-        console.log(" Nombre choisie dans le tabeaux " + allQuestion[nombreRandom]);
         if (reponse == 5) {
             startTheGame(reponse, data, nombreRandom, allQuestion);
             return 1;
@@ -45,7 +44,6 @@ function Quiz(reponse) {
 
 
 function startTheGame(reponse, data, nombreRandom, allQuestion) {
-    console.log("Start of the quiz");
     document.getElementById("start").style.display = "none";
     document.getElementById("wrapper").style.display = "none";
     document.body.style.backgroundImage = "none";
@@ -78,8 +76,6 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
 
     // Détermine si les réponses sont bonnes
     if((additionBonneReponseDonnee == addtionBonneReponseQuestion) && additionBonneReponseDonnee != null){           
-        console.log(additionBonneReponseDonnee);
-        console.log("Meme taille");
 
         // document.getElementById("reponsebonne").classList.toggle("anim");
     
@@ -90,10 +86,8 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
 
         },2500)
         
-        document.getElementById("reponsebonne").style.backgroundColor = "Green";
         document.getElementById("valiationreponse").innerHTML = "Bonne Réponse(s)";
 
-        console.log("Bravo !!  1+");
         numberOfGoodAnswer++;
         return 1;
     }
@@ -111,8 +105,6 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
         document.getElementById("reponsebonne").style.backgroundColor = "Red";
 
         document.getElementById("valiationreponse").innerHTML = "Mauvaise Réponse(s)";
-        console.log("Mauvaise Réponse !");
-        console.log("Pas la meme taille")
         return 0;
     }
 
@@ -123,8 +115,6 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
 // Vérifie si c'est la derniere question et change en fonction
 function checkFin(reponse, data) {
     if (questionNumber === data.length) {
-        console.log(numberOfGoodAnswer);
-        console.log("Finie !");
         document.getElementById("ecranFin").style.display = "initial";
         document.getElementById("nombreDeReponse").innerHTML += numberOfGoodAnswer;
         document.getElementById("content").style.display = "none";
@@ -140,7 +130,6 @@ function multipleReponse(nombreChoisie) {
     for (let i = 0; i < 4; i++) {
         if (reponseM[i] == nombreChoisie) {               
             reponseM.splice(i,1);
-            console.log("Dans le tableau il y a " + reponseM)
             document.getElementById((nombreChoisie + 1).toString()).style.border = "none";
             
             return 0;
@@ -150,7 +139,6 @@ function multipleReponse(nombreChoisie) {
     reponseM.push(nombreChoisie);
     document.getElementById((nombreChoisie + 1).toString()).style.border = "solid 4px black";
 
-    console.log("Dans le tableau il y a " + reponseM);
     
 }
 
