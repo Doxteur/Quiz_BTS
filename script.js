@@ -43,6 +43,9 @@ function Quiz(reponse) {
 function startTheGame(reponse, data, nombreRandom, allQuestion) {
     console.log("Start of the quiz");
     document.getElementById("start").style.display = "none";
+    document.getElementById("wrapper").style.display = "none";
+    document.body.style.backgroundImage = "none";
+    document.getElementById("hamburger").style.display = "initial";
     document.getElementById("content").style.display = "initial";
     document.getElementById("Question").innerHTML = data[allQuestion[nombreRandom]].question;
     for (var i = 0; i < 4; i++) {
