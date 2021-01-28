@@ -1,3 +1,7 @@
+
+
+
+
 // Play Quiz script Temporary
 var questionNumber = 1;
 var numberOfGoodAnswer = 0;
@@ -58,7 +62,6 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
 }
 
 
-
 function checkWin(reponse, data, nombreRandom, allQuestion) {
     //Reponse donnee par l'utilisateur
     let additionBonneReponseDonnee = null;
@@ -76,18 +79,12 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
 
     // Détermine si les réponses sont bonnes
     if((additionBonneReponseDonnee == addtionBonneReponseQuestion) && additionBonneReponseDonnee != null){           
-
         // document.getElementById("reponsebonne").classList.toggle("anim");
-    
         $("#reponsebonne").toggleClass("anim");
         setTimeout(function(){
             $("#reponsebonne").toggleClass("anim");
-            
-
         },2500)
-        
         document.getElementById("valiationreponse").innerHTML = "Bonne Réponse(s)";
-
         numberOfGoodAnswer++;
         return 1;
     }
@@ -96,14 +93,9 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
        
         $("#reponsebonne").toggleClass("anim");
         setTimeout(function(){
-
-
             $("#reponsebonne").toggleClass("anim");
-            
-            
         },2500);
         document.getElementById("reponsebonne").style.backgroundColor = "Red";
-
         document.getElementById("valiationreponse").innerHTML = "Mauvaise Réponse(s)";
         return 0;
     }
