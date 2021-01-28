@@ -1,25 +1,20 @@
 var granimInstance = new Granim({
     element: '#canvas-basic',
-    direction: 'diagonal',
+    name: 'basic-gradient',
+    direction: 'left-right',
+    opacity: [1, 1],
     isPausedWhenNotInView: true,
     states: {
         "default-state": {
             gradients: [
-                ['#ff9966', '#ff5e62'],
-                ['#00F260', '#0575E6'],
-                ['#e1eec3', '#f05053']
+                ['#AA076B', '#61045F'],
+                ['#02AAB0', '#00CDAC'],
+                ['#DA22FF', '#9733EE']
             ]
         }
     }
 });
-
-
-
-
-
-
 // Play Quiz script Temporary
-
 var questionNumber = 1;
 var numberOfGoodAnswer = 0;
 var allQuestion = [0, 1, 2, 3]; // A changer
@@ -28,44 +23,41 @@ var nombreRandom = getRandomInt(0, (allQuestion.length - 1));
 function Refresh() {
     document.location.reload();
 }
-
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 //Permet de récupèrer les informations dans le json
 function Quiz(reponse) {
     fetch("quiz.json")
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            //Start the Game 
-            if (reponse == 5) {
-                startTheGame(reponse, data, nombreRandom, allQuestion);
-                return 1;
-            }
-            //Verifie la validité des réponses
-            checkWin(reponse, data, nombreRandom, allQuestion);
-            //Check if it is the last question
-            if (checkFin(reponse, data)) {
-                return 1;
-            }
-            //Check if the answer is valid
-            allQuestion.splice(nombreRandom, 1);
-            nombreRandom = getRandomInt(0, (allQuestion.length - 1));
-            document.getElementById("Question").innerHTML = data[allQuestion[nombreRandom]].question;
-            for (var i = 0; i < 4; i++) {
-                var emplacement = i + 1;
-                document.getElementById(emplacement.toString()).innerHTML = data[allQuestion[nombreRandom]].reponses[0].Propositions[i];
-            }
-            questionNumber++;
-        });
+        .then(function (response) {
+        return response.json();
+    })
+        .then(function (data) {
+        //Start the Game 
+        if (reponse == 5) {
+            startTheGame(reponse, data, nombreRandom, allQuestion);
+            return 1;
+        }
+        //Verifie la validité des réponses
+        checkWin(reponse, data, nombreRandom, allQuestion);
+        //Check if it is the last question
+        if (checkFin(reponse, data)) {
+            return 1;
+        }
+        //Check if the answer is valid
+        allQuestion.splice(nombreRandom, 1);
+        nombreRandom = getRandomInt(0, (allQuestion.length - 1));
+        document.getElementById("Question").innerHTML = data[allQuestion[nombreRandom]].question;
+        for (var i = 0; i < 4; i++) {
+            var emplacement = i + 1;
+            document.getElementById(emplacement.toString()).innerHTML = data[allQuestion[nombreRandom]].reponses[0].Propositions[i];
+        }
+        questionNumber++;
+    });
 }
-
 function startTheGame(reponse, data, nombreRandom, allQuestion) {
     document.getElementById("start").style.display = "none";
     document.getElementById("wrapper").style.display = "none";
-    document.body.style.backgroundImage = "none";
     document.getElementById("hamburger").style.display = "initial";
     document.getElementById("content").style.display = "initial";
     document.getElementById("Question").innerHTML = data[allQuestion[nombreRandom]].question;
@@ -74,7 +66,6 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
         document.getElementById(emplacement.toString()).innerHTML = data[allQuestion[nombreRandom]].reponses[0].Propositions[i];
     }
 }
-
 function checkWin(reponse, data, nombreRandom, allQuestion) {
     //Reponse donnee par l'utilisateur
     var additionBonneReponseDonnee = null;
@@ -91,15 +82,16 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
     if ((additionBonneReponseDonnee == addtionBonneReponseQuestion) && additionBonneReponseDonnee != null) {
         // document.getElementById("reponsebonne").classList.toggle("anim");
         $("#reponsebonne").toggleClass("anim");
-        setTimeout(function() {
+        setTimeout(function () {
             $("#reponsebonne").toggleClass("anim");
         }, 2500);
         document.getElementById("valiationreponse").innerHTML = "Bonne Réponse(s)";
         numberOfGoodAnswer++;
         return 1;
-    } else {
+    }
+    else {
         $("#reponsebonne").toggleClass("anim");
-        setTimeout(function() {
+        setTimeout(function () {
             $("#reponsebonne").toggleClass("anim");
         }, 2500);
         document.getElementById("reponsebonne").style.backgroundColor = "Red";
@@ -117,7 +109,6 @@ function checkFin(reponse, data) {
     }
 }
 var reponseM = [];
-
 function multipleReponse(nombreChoisie) {
     for (var i = 0; i < 4; i++) {
         if (reponseM[i] == nombreChoisie) {
@@ -129,7 +120,6 @@ function multipleReponse(nombreChoisie) {
     reponseM.push(nombreChoisie);
     document.getElementById((nombreChoisie + 1).toString()).style.border = "solid 4px black";
 }
-
 function validation() {
     for (var i = 1; i <= 4; i++) {
         document.getElementById(i.toString()).style.border = "none";
@@ -140,7 +130,7 @@ function validation() {
 //Animation HTML
 var btn = document.getElementById("hamburger");
 var nav = document.getElementById("leftHeader");
-btn.addEventListener("click", function() {
+btn.addEventListener("click", function () {
     nav.classList.toggle("active");
     btn.classList.toggle("active");
 });
