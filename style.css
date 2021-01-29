@@ -39,6 +39,10 @@ a {
 
 }
 
+div a {
+    color: white;
+}
+
 /* Implementation author : Zach Sauzier*/
 
 html,
