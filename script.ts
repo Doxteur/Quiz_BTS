@@ -1,6 +1,6 @@
 
+var granimInstance = new Granim({     
 
-var granimInstance = new Granim({
     element: '#canvas-basic',
     name: 'basic-gradient',
     direction: 'left-right',

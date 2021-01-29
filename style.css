@@ -222,6 +222,7 @@ body {
     overflow-y: auto;
     scroll-margin: auto;
     display: table;
+    z-index: 45;
 }
 
 .div1 {
