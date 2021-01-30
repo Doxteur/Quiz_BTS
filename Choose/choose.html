@@ -5,18 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="choose.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="node_modules/granim/dist/granim.min.js"></script>
-
+    <script src="../node_modules/granim/dist/granim.min.js"></script>
 
 </head>
-
 
 <body>
     <canvas id="canvas-basic"></canvas>
 
-    <img src="Images/hamburger.png" alt="Hamburger" id="hamburger" style="display: none;">
+    <img src="../Images/hamburger.png" alt="Hamburger" id="hamburger" style="display: none;">
 
     <div id="leftHeader">
         <h1 id="title" onclick="Refresh()"><span>Q</span>uiz</h1>
@@ -27,18 +25,14 @@
             <h1>Joueur</h1>
         </div>
     </div>
-    <div class="svg-wrapper" id="wrapper">
-        <svg height="90" width="420" xmlns="http://www.w3.org/2000/svg">
-            <rect class="shape" height="90" width="420" />
-
-            <div class="text" id="start"><a href="Choose/choose.html"> LE QUIZ</a></div>
-        </svg>
+    <div id="select">
+        <a href="../createur.html">
+            <h1>Créateur</h1>
+        </a>
+        <h1 onclick="Quiz(5)">Joueur</h1>
     </div>
-    <!-- 
-    <button id="start" onclick="Quiz(5)">
-             Start the quiz
-    </button>
-    -->
+
+
 
     <div id="content">
 
@@ -72,16 +66,8 @@
     <div id="reponsebonne">
         <h1 id="valiationreponse">Bonne réponse(s)</h1>
     </div>
+    <script src="choose.js"></script>
 
-    <script src="script.js"></script>
-
-
-    <footer>
-        <div>
-            <a href="#"><img src="Images/help.png" alt="" class="smaller"></a>
-            <a href="#"><img src="Images/option.png" alt=""></a>
-        </div>
-    </footer>
 </body>
 
 </html>
