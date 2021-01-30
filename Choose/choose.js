@@ -19,7 +19,7 @@ var granimInstance = new Granim({
 var questionNumber = 1;
 var numberOfGoodAnswer = 0;
 var allQuestion = [0, 1, 2, 3]; // A changer
-var nombreRandom = getRandomInt(0, (allQuestion.length - 1));
+var nombreRandom = getRandomInt(0, (allQuestion.length));
 // Jimmy1
 function Refresh() {
     document.location.reload();
@@ -91,6 +91,8 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
             $("#reponsebonne").toggleClass("anim");
         }, 2500);
         document.getElementById("valiationreponse").innerHTML = "Bonne Réponse(s)";
+        document.getElementById("reponsebonne").style.backgroundColor = "Green";
+
         numberOfGoodAnswer++;
         return 1;
     } else {
@@ -118,7 +120,7 @@ function multipleReponse(nombreChoisie) {
     for (var i = 0; i < 4; i++) {
         if (reponseM[i] == nombreChoisie) {
             reponseM.splice(i, 1);
-            document.getElementById((nombreChoisie + 1).toString()).style.border = "none";
+            document.getElementById((nombreChoisie + 1).toString()).style.border = "solid 4px transparent";
             return 0;
         }
     }
@@ -128,7 +130,7 @@ function multipleReponse(nombreChoisie) {
 
 function validation() {
     for (var i = 1; i <= 4; i++) {
-        document.getElementById(i.toString()).style.border = "none";
+        document.getElementById(i.toString()).style.border = "solid 4px transparent";
     }
     Quiz(reponseM);
     reponseM = [];
