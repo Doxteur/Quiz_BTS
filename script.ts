@@ -163,8 +163,8 @@ function validation(){
 
 //Animation HTML
 
-const btn = document.getElementById("hamburger");
-const nav = document.getElementById("leftHeader")
+var btn = document.getElementById("hamburger");
+var nav = document.getElementById("leftHeader")
     btn.addEventListener("click", () => {
         nav.classList.toggle("active");
         btn.classList.toggle("active");

@@ -16,3 +16,14 @@ function showQuestion() {
 }
 showQuestion();
 //Auto compile tsc *.ts --watch
+//Animation HTML
+var btn = document.getElementById("hamburger");
+var nav = document.getElementById("leftHeader");
+btn.addEventListener("click", function () {
+    nav.classList.toggle("active");
+    btn.classList.toggle("active");
+});
+//Click on theme -> display all question on theme
+function displayQuest() {
+    console.log("Check DisplayQuest");
+}
