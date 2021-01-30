@@ -12,6 +12,31 @@
     padding: 0;
 }
 
+#select {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    /* poussé de la moitié de hauteur du référent */
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 50px;
+}
+
+#select h1 {
+    cursor: pointer;
+    margin-left: 35px;
+    margin-right: 35px;
+    padding: 15px;
+    color: white;
+    font-family: "Titillium Web";
+}
+
+#select h1:hover {
+    transition: ease-in-out 1s;
+    transform: scale(1.1);
+    border-radius: 50px;
+}
+
 #canvas-basic {
     position: absolute;
     top: 0;
@@ -22,10 +47,7 @@
 }
 
 body {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    background-color: #61045F;
 }
 
 a {
@@ -67,7 +89,7 @@ body {
 
 .text {
     font-family: sans-serif;
-    font-size: 90px;
+    font-size: 72px;
     line-height: 9px;
     letter-spacing: 8px;
     color: #fff;
@@ -115,15 +137,11 @@ button:not(#hamburger) {
     border-radius: 55px;
 }
 
-body {
-    background-color: #f7e8d8d5;
-}
-
 #hamburger {
     position: absolute;
     left: 0;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     margin: 10px;
     transition: transform 1s;
     z-index: 150;
@@ -146,7 +164,7 @@ body {
 
 #hamburger.active {
     transition: transform 1s;
-    transform: translateX(135px);
+    transform: translateX(145px);
 }
 
 #inner_header {
@@ -160,6 +178,7 @@ body {
     padding: 15px;
     background-color: #205D76;
     color: white;
+    font-size: 35px;
     font-family: 'Titillium Web', sans-serif;
 }
 
@@ -183,7 +202,7 @@ body {
 #question {
     font-family: 'Titillium Web', sans-serif;
     padding-top: 10%;
-    font-size: 27px;
+    font-size: 35px;
     text-align: center;
 }
 
@@ -201,9 +220,8 @@ body {
 #reponse div {
     cursor: pointer;
     margin: 50px 150px 0 150px;
-    width: 300px;
-    min-height: 50px;
-    max-height: 150px;
+    width: 350px;
+    height: 80px;
     border-radius: 10px;
     overflow-y: auto;
     scroll-margin: auto;
@@ -234,7 +252,7 @@ body {
 #reponse h1 {
     display: table-cell;
     vertical-align: middle;
-    font-size: 27px;
+    font-size: 35px;
     text-align: center;
     color: white;
     font-family: 'Titillium Web', sans-serif;
