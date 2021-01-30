@@ -28,6 +28,7 @@
     margin-right: 35px;
     padding: 15px;
     color: white;
+    font-family: "Titillium Web";
 }
 
 #select h1:hover {
@@ -46,7 +47,7 @@
 }
 
 body {
-    background-color: #f7e8d8d5;
+    background-color: #61045F;
 }
 
 a {
@@ -139,8 +140,8 @@ button:not(#hamburger) {
 #hamburger {
     position: absolute;
     left: 0;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     margin: 10px;
     transition: transform 1s;
     z-index: 150;
@@ -163,7 +164,7 @@ button:not(#hamburger) {
 
 #hamburger.active {
     transition: transform 1s;
-    transform: translateX(135px);
+    transform: translateX(145px);
 }
 
 #inner_header {
@@ -177,6 +178,7 @@ button:not(#hamburger) {
     padding: 15px;
     background-color: #205D76;
     color: white;
+    font-size: 35px;
     font-family: 'Titillium Web', sans-serif;
 }
 
@@ -200,7 +202,7 @@ button:not(#hamburger) {
 #question {
     font-family: 'Titillium Web', sans-serif;
     padding-top: 10%;
-    font-size: 27px;
+    font-size: 35px;
     text-align: center;
 }
 
@@ -218,9 +220,8 @@ button:not(#hamburger) {
 #reponse div {
     cursor: pointer;
     margin: 50px 150px 0 150px;
-    width: 300px;
-    min-height: 50px;
-    max-height: 150px;
+    width: 350px;
+    height: 80px;
     border-radius: 10px;
     overflow-y: auto;
     scroll-margin: auto;
@@ -251,7 +252,7 @@ button:not(#hamburger) {
 #reponse h1 {
     display: table-cell;
     vertical-align: middle;
-    font-size: 27px;
+    font-size: 35px;
     text-align: center;
     color: white;
     font-family: 'Titillium Web', sans-serif;

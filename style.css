@@ -7,13 +7,9 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
-
-
-
 * {
     margin: 0;
     padding: 0;
-
 }
 
 #canvas-basic {
@@ -32,16 +28,15 @@ body {
     background-size: cover;
 }
 
-
 a {
     color: none;
     text-decoration: none;
-
 }
 
 div a {
     color: white;
 }
+
 
 /* Implementation author : Zach Sauzier*/
 
@@ -58,7 +53,6 @@ body {
     margin: 0 auto;
     width: 420px;
     cursor: pointer;
-
 }
 
 .shape {
@@ -73,7 +67,7 @@ body {
 
 .text {
     font-family: sans-serif;
-    font-size: 72px;
+    font-size: 90px;
     line-height: 9px;
     letter-spacing: 8px;
     color: #fff;
@@ -87,7 +81,9 @@ body {
     stroke-dasharray: 1050;
 }
 
+
 /* Fin implementation */
+
 #ecranFin {
     text-align: center;
     color: #205D76;
@@ -102,7 +98,6 @@ body {
 #finText {
     font-size: 60px;
 }
-
 
 button:not(#hamburger) {
     position: absolute;
@@ -132,8 +127,6 @@ body {
     margin: 10px;
     transition: transform 1s;
     z-index: 150;
-
-
 }
 
 #leftHeader {
@@ -144,20 +137,16 @@ body {
     background-color: #3A7BDE;
     transform: translateX(-200px);
     transition: transform 1s;
-
 }
 
 #leftHeader.active {
     transition: transform 1s;
     transform: translateX(0px);
-
 }
 
 #hamburger.active {
-
     transition: transform 1s;
     transform: translateX(135px);
-
 }
 
 #inner_header {
@@ -172,7 +161,6 @@ body {
     background-color: #205D76;
     color: white;
     font-family: 'Titillium Web', sans-serif;
-
 }
 
 #title {
@@ -190,30 +178,24 @@ body {
 #content {
     display: none;
     position: relative;
-
 }
 
 #question {
-
     font-family: 'Titillium Web', sans-serif;
     padding-top: 10%;
     font-size: 27px;
     text-align: center;
 }
 
-
 #question h2 {
-
     color: #FFC122;
 }
 
 #reponse {
-
     padding-top: 3.5%;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-
 }
 
 #reponse div {
@@ -256,11 +238,9 @@ body {
     text-align: center;
     color: white;
     font-family: 'Titillium Web', sans-serif;
-
 }
 
 #reponsebonne {
-
     background-color: green;
     padding: 10px;
     width: 250px;
@@ -274,29 +254,21 @@ body {
     font-family: 'Titillium Web', sans-serif;
     display: none;
     transition: display ease-in-out 0.5s;
-
-
 }
 
 #reponsebonne.anim {
     display: table;
     animation: linear opacity 1s alternate;
-
 }
 
 @keyframes opacity {
     0% {
         transform: translate(-100%);
         opacity: 0;
-
     }
-
-
     100% {
         opacity: 50%;
-
     }
-
 }
 
 #reponsebonne h1 {
@@ -321,7 +293,6 @@ footer div {
 
 footer img {
     cursor: pointer;
-
     margin-right: 15px;
     width: 50px;
 }
@@ -329,5 +300,4 @@ footer img {
 .smaller {
     height: 50px;
     width: 40px;
-
 }

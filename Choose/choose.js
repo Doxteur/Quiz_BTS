@@ -59,6 +59,7 @@ function Quiz(reponse) {
 }
 
 function startTheGame(reponse, data, nombreRandom, allQuestion) {
+    document.body.style.backgroundColor = "white"
     document.getElementById("select").style.display = "none";
     document.getElementById("canvas-basic").style.display = "none";
     document.getElementById("hamburger").style.display = "initial";
