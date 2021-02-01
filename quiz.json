@@ -18,7 +18,7 @@
         "question": "Qui est Elton John ?",
         "reponses": [{
                 "Propositions": ["Un Rappeur", "Un chanteur", "Un astronaute", "Un champion de karting"],
-                "ReponsesVraie": [1]
+                "ReponsesVraie": [0]
             }
 
         ]

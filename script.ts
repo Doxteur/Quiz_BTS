@@ -1,22 +1,4 @@
 
-var granimInstance = new Granim({     
-
-    element: '#canvas-basic',
-    name: 'basic-gradient',
-    direction: 'left-right',
-    opacity: [1, 1],
-    isPausedWhenNotInView: true,
-    states : {
-        "default-state": {
-            gradients: [
-                ['#AA076B', '#61045F'],
-                ['#02AAB0', '#00CDAC'],
-                ['#DA22FF', '#9733EE']
-            ]
-        }
-    }
-});
-
 // Play Quiz script Temporary
 var questionNumber = 1;
 var numberOfGoodAnswer = 0;
@@ -83,13 +65,17 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
 
     //Reponse demander par la question
     let addtionBonneReponseQuestion = null;
+    
     //Calcul en ajoutant dans la variable chaque valeur du tableau puis comparaison de la somme entre les deux tableaux 
+
     for(let i = 0; i < reponse.length; i++){
         additionBonneReponseDonnee += reponse[i];    
+        console.log(additionBonneReponseDonnee)
+
     }
     for(let i = 0; i < data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie.length; i++){
         addtionBonneReponseQuestion += data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie[i];
-        
+        console.log(addtionBonneReponseQuestion)
     }
 
     // Détermine si les réponses sont bonnes
