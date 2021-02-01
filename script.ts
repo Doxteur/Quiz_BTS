@@ -1,4 +1,20 @@
 
+var granimInstance = new Granim({
+    element: '#canvas-basic',
+    name: 'basic-gradient',
+    direction: 'left-right',
+    opacity: [1, 1],
+    isPausedWhenNotInView: true,
+    states: {
+        "default-state": {
+            gradients: [
+                ['#AA076B', '#61045F'],
+                ['#02AAB0', '#00CDAC'],
+                ['#DA22FF', '#9733EE']
+            ]
+        }
+    }
+});
 // Play Quiz script Temporary
 var questionNumber = 1;
 var numberOfGoodAnswer = 0;
@@ -114,8 +130,6 @@ function checkFin(reponse, data) {
         return 1;
     }
 }
-
-
 
 var reponseM = [];
 function multipleReponse(nombreChoisie) {
