@@ -39,5 +39,6 @@ btn.addEventListener("click", function () {
 //Click on theme -> display all question on theme
 
 function displayQuest(){
+    document.getElementById("allQuestion").style.display = "none";
     console.log("Check DisplayQuest");
 }
