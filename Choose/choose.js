@@ -81,6 +81,7 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
     //Calcul en ajoutant dans la variable chaque valeur du tableau puis comparaison de la somme entre les deux tableaux 
     for (var i = 0; i < reponse.length; i++) {
         additionBonneReponseDonnee += reponse[i];
+        console.log(additionBonneReponseDonnee)
     }
     for (var i = 0; i < data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].ReponsesVraie.length; i++) {
         addtionBonneReponseQuestion += data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].ReponsesVraie[i];

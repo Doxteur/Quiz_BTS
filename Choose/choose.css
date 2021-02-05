@@ -7,6 +7,7 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -202,7 +203,7 @@ button:not(#hamburger) {
 #question {
     font-family: 'Titillium Web', sans-serif;
     padding-top: 10%;
-    font-size: 35px;
+    font-size: 30px;
     text-align: center;
 }
 
@@ -252,7 +253,7 @@ button:not(#hamburger) {
 #reponse h1 {
     display: table-cell;
     vertical-align: middle;
-    font-size: 35px;
+    font-size: 30px;
     text-align: center;
     color: white;
     font-family: 'Titillium Web', sans-serif;
@@ -284,6 +285,7 @@ button:not(#hamburger) {
         transform: translate(-100%);
         opacity: 0;
     }
+
     100% {
         opacity: 50%;
     }
