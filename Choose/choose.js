@@ -20,6 +20,7 @@ var questionNumber = 1;
 var numberOfGoodAnswer = 0;
 var allQuestion = [0, 1, 2, 3]; // A changer
 var nombreRandom = getRandomInt(0, (allQuestion.length));
+let themeChoisie = 0;
 // Jimmy1
 function Refresh() {
     document.location.reload();
@@ -35,6 +36,7 @@ function Quiz(reponse) {
             return response.json();
         })
         .then(function(data) {
+            console.log(data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions[0]);
             //Start the Game 
             if (reponse == 5) {
                 startTheGame(reponse, data, nombreRandom, allQuestion);
@@ -49,10 +51,10 @@ function Quiz(reponse) {
             //Check if the answer is valid
             allQuestion.splice(nombreRandom, 1);
             nombreRandom = getRandomInt(0, (allQuestion.length - 1));
-            document.getElementById("Question").innerHTML = data[allQuestion[nombreRandom]].question;
+            document.getElementById("Question").innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].question;
             for (var i = 0; i < 4; i++) {
                 var emplacement = i + 1;
-                document.getElementById(emplacement.toString()).innerHTML = data[allQuestion[nombreRandom]].reponses[0].Propositions[i];
+                document.getElementById(emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions[i];
             }
             questionNumber++;
         });
@@ -64,10 +66,10 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
     document.getElementById("canvas-basic").style.display = "none";
     document.getElementById("hamburger").style.display = "initial";
     document.getElementById("content").style.display = "initial";
-    document.getElementById("Question").innerHTML = data[allQuestion[nombreRandom]].question;
+    document.getElementById("Question").innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].question;
     for (var i = 0; i < 4; i++) {
         var emplacement = i + 1;
-        document.getElementById(emplacement.toString()).innerHTML = data[allQuestion[nombreRandom]].reponses[0].Propositions[i];
+        document.getElementById(emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions[i];
     }
 }
 
@@ -80,8 +82,8 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
     for (var i = 0; i < reponse.length; i++) {
         additionBonneReponseDonnee += reponse[i];
     }
-    for (var i = 0; i < data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie.length; i++) {
-        addtionBonneReponseQuestion += data[allQuestion[nombreRandom]].reponses[0].ReponsesVraie[i];
+    for (var i = 0; i < data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].ReponsesVraie.length; i++) {
+        addtionBonneReponseQuestion += data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].ReponsesVraie[i];
     }
     // Détermine si les réponses sont bonnes
     if ((additionBonneReponseDonnee == addtionBonneReponseQuestion) && additionBonneReponseDonnee != null) {
