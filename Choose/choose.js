@@ -20,7 +20,7 @@ var questionNumber = 1;
 var numberOfGoodAnswer = 0;
 var allQuestion = [0, 1, 2, 3]; // A changer
 var nombreRandom = getRandomInt(0, (allQuestion.length));
-let themeChoisie = 0;
+let themeChoisie = 1;
 // Jimmy1
 function Refresh() {
     document.location.reload();
@@ -36,8 +36,10 @@ function Quiz(reponse) {
             return response.json();
         })
         .then(function(data) {
-            console.log(data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions[0]);
-            //Start the Game 
+
+            //Affiche le theme
+            console.log(data.themes[themeChoisie].theme)
+                //Start the Game 
             if (reponse == 5) {
                 startTheGame(reponse, data, nombreRandom, allQuestion);
                 return 1;
@@ -81,7 +83,6 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
     //Calcul en ajoutant dans la variable chaque valeur du tableau puis comparaison de la somme entre les deux tableaux 
     for (var i = 0; i < reponse.length; i++) {
         additionBonneReponseDonnee += reponse[i];
-        console.log(additionBonneReponseDonnee)
     }
     for (var i = 0; i < data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].ReponsesVraie.length; i++) {
         addtionBonneReponseQuestion += data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].ReponsesVraie[i];
@@ -110,7 +111,7 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
 }
 // Vérifie si c'est la derniere question et change en fonction
 function checkFin(reponse, data) {
-    if (questionNumber === data.length) {
+    if (questionNumber === data.themes[themeChoisie].Questions.length) {
         document.getElementById("ecranFin").style.display = "initial";
         document.getElementById("nombreDeReponse").innerHTML += numberOfGoodAnswer;
         document.getElementById("content").style.display = "none";

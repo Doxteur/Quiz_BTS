@@ -56,7 +56,7 @@
         },
 
         {
-            "theme": "Divers",
+            "theme": "Jeux Video",
             "Questions": [{
                     "id": 1,
                     "nom": "Question1",
@@ -94,9 +94,9 @@
                 {
                     "id": 4,
                     "nom": "Question4",
-                    "question": "Qu’est-ce qu’une adresse IP ?",
+                    "question": "De quelle célèbre série d’infiltration Sam Fisher est-il le héros ?",
                     "reponses": [{
-                            "Propositions": ["Un numéro qui identifie chaque matériel informatique", "Le protocole de communication utilisé sur Internet", " L’adresse d’un site web, commençant par 'http://'", "L'adresse d'une maison"],
+                            "Propositions": ["Metal Gear", "Tenchu", "Hitman", "Dark Project"],
                             "ReponsesVraie": [0]
                         }
 
