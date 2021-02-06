@@ -1,30 +1,50 @@
 function showQuestion() {
 
     fetch("quiz.json")
-        .then(function(response) {
+        .then(function (response) {
             return response.json();
         })
-        .then(function(data) {
-            data.forEach(element => {
+        .then(function (data) {
+            data.themes.forEach(element => {
                 let newDiv = document.createElement("div");
-                let newText = document.createElement("h1");
-                
-                // document.getElementById("allQuestion").appendChild(newDiv).classList.add(element.nom);
-                $(newDiv).appendTo("#allQuestion").addClass(element.nom)
+                let tempName = element.idtheme;
+                tempName = tempName.toString();
+                console.log(tempName)
+                $(newDiv).appendTo("#allQuestion").addClass(tempName)
+                $("." + tempName).append("<h1>" + element.theme + "</h1>");
 
-                $("." + element.nom).append("<h1>" + element.question + "</h1>");
-                $("." + element.nom).append("</br>");
-                $("." + element.nom).append("<h2>" + element.reponses[0].Propositions + "</h2>")
-                $("." + element.nom).append("</br>");
 
-                $("." + element.nom).append("<h3> La bonne réponse est : </h3>")
-                $("." + element.nom).append("</br>");
-                for (let i = 0; i < element.reponses[0].ReponsesVraie.length; i++) {
-                    $("." + element.nom).append("<h2>" + element.reponses[0].Propositions[element.reponses[0].ReponsesVraie[i]])
-                }
-                
-                console.log(element.nom);
-                console.log(element.reponses[0].ReponsesVraie)
+                element.Questions.forEach(themeElement => {
+
+
+                    // document.getElementById("allQuestion").appendChild(newDiv).classList.add(element.nom);
+                    //Affichage Question
+                    $("." + tempName).append("<h1>" + themeElement.question + "</h1>");
+
+                    for (let i = 0; i < themeElement.reponses[0].Propositions.length; i++) {
+                        $("." + tempName).append("<h2>" + themeElement.reponses[0].Propositions[i] + "</h2>");
+                    }
+
+                    $("." + tempName).append("</br>");
+
+                    for (let j = 0; j < themeElement.reponses[0].ReponsesVraie.length; j++) {
+                        $("." + tempName).append("<h1> La bonne réponse est : <span>" + themeElement.reponses[0].Propositions[themeElement.reponses[0].ReponsesVraie[j]] + " </span></h1>");
+                    }
+
+                    $("." + tempName).append("</br>");
+                    //
+
+                    // $("." + element.nom).append("</br>");
+
+                    // $("." + element.nom).append("<h3> La bonne réponse est : </h3>")
+                    // $("." + element.nom).append("</br>");
+                    // for (let i = 0; i < element.reponses[0].ReponsesVraie.length; i++) {
+                    //     $("." + element.nom).append("<h2>" + element.reponses[0].Propositions[element.reponses[0].ReponsesVraie[i]])
+                    // }
+
+                    // console.log(element.nom);
+                    // console.log(element.reponses[0].ReponsesVraie)
+                });
             });
         });
 }
@@ -49,6 +69,6 @@ btn.addEventListener("click", function () {
 
 //Click on theme -> display all question on theme
 
-function displayQuest(){
+function displayQuest() {
     console.log("Check DisplayQuest");
 }

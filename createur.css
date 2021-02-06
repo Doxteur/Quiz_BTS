@@ -7,6 +7,7 @@
 body {
     background-color: #f7e8d8d5;
 }
+
 button:not(#hamburger) {
     position: absolute;
     top: 50%;
@@ -23,7 +24,6 @@ button:not(#hamburger) {
     border-radius: 55px;
 }
 
-
 #hamburger {
     position: absolute;
     top: 0;
@@ -33,8 +33,6 @@ button:not(#hamburger) {
     margin: 10px;
     transition: transform 1s;
     z-index: 150;
-
-
 }
 
 #leftHeader {
@@ -46,20 +44,16 @@ button:not(#hamburger) {
     transform: translateX(-200px);
     transition: transform 1s;
     top: 0;
-
 }
 
 #leftHeader.active {
     transition: transform 1s;
     transform: translateX(0px);
-
 }
 
 #hamburger.active {
-
     transition: transform 1s;
     transform: translateX(135px);
-
 }
 
 #inner_header {
@@ -100,10 +94,23 @@ button:not(#hamburger) {
 
 #allQuestion div {
     width: 350px;
-    height: 150px;
+    min-height: 150px;
     margin: 20px;
     background-color: #62D4D4;
     color: white;
     font-family: sans-serif;
     font-size: 20px;
+    text-align: center;
+}
+
+#allQuestion h1 {
+    font-size: 15px;
+}
+
+#allQuestion h2 {
+    font-size: 10px;
+}
+
+span {
+    color: red;
 }

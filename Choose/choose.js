@@ -39,8 +39,7 @@ function Quiz(reponse) {
         .then(function(data) {
 
             //Affiche le theme
-            console.log(data.themes[themeChoisie].theme)
-                //Start the Game 
+            //Start the Game 
             if (reponse == 5) {
                 startTheGame(reponse, data, nombreRandom, allQuestion);
                 return 1;
