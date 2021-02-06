@@ -1,3 +1,4 @@
+//Itération 6
 var granimInstance = new Granim({
     element: '#canvas-basic',
     name: 'basic-gradient',
