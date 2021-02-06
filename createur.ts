@@ -9,11 +9,22 @@ function showQuestion() {
                 let newDiv = document.createElement("div");
                 let newText = document.createElement("h1");
                 
-                document.getElementById("allQuestion").appendChild(newDiv).classList.add(element.nom);
-                document.getElementsByClassName(element.nom)[0].textContent += element.reponses[0].Propositions;
-                document.getElementsByClassName(element.nom)[0].textContent += element.reponses[0].ReponsesVraie;
+                // document.getElementById("allQuestion").appendChild(newDiv).classList.add(element.nom);
+                $(newDiv).appendTo("#allQuestion").addClass(element.nom)
+
+                $("." + element.nom).append("<h1>" + element.question + "</h1>");
+                $("." + element.nom).append("</br>");
+                $("." + element.nom).append("<h2>" + element.reponses[0].Propositions + "</h2>")
+                $("." + element.nom).append("</br>");
+
+                $("." + element.nom).append("<h3> La bonne réponse est : </h3>")
+                $("." + element.nom).append("</br>");
+                for (let i = 0; i < element.reponses[0].ReponsesVraie.length; i++) {
+                    $("." + element.nom).append("<h2>" + element.reponses[0].Propositions[element.reponses[0].ReponsesVraie[i]])
+                }
                 
                 console.log(element.nom);
+                console.log(element.reponses[0].ReponsesVraie)
             });
         });
 }
@@ -39,6 +50,5 @@ btn.addEventListener("click", function () {
 //Click on theme -> display all question on theme
 
 function displayQuest(){
-    document.getElementById("allQuestion").style.display = "none";
     console.log("Check DisplayQuest");
 }
