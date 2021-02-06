@@ -7,10 +7,10 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
-
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box
 }
 
 #select {
@@ -285,7 +285,6 @@ button:not(#hamburger) {
         transform: translate(-100%);
         opacity: 0;
     }
-
     100% {
         opacity: 50%;
     }
@@ -320,4 +319,47 @@ footer img {
 .smaller {
     height: 50px;
     width: 40px;
+}
+
+#theme {
+    /* display: none; */
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#theme div {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 50px;
+    width: 250px;
+    height: 125px;
+    background-color: #3A7BDE;
+    color: white;
+    font-family: sans-serif;
+    display: table;
+}
+
+#theme div>h1 {
+    display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#titreTheme {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #E94D4D;
+    font-size: 55px;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding-top: 200px;
 }

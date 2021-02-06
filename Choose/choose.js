@@ -61,6 +61,39 @@ function Quiz(reponse) {
             questionNumber++;
         });
 }
+// Quand l'utilisateur a choisie un theme
+function chooseTheme(themeChoisiee) {
+    themeChoisie = themeChoisiee;
+    document.getElementById("theme").style.display = "none"
+    Quiz(5);
+}
+// Affiche les themes à l'utilisateur
+function showTheme() {
+    document.getElementById("titreTheme").style.display = "initial"
+
+    document.getElementById("hamburger").style.display = "initial"
+    document.getElementById("theme").style.display = "flex"
+    document.getElementById("select").style.display = "none";
+    document.getElementById("canvas-basic").style.display = "none";
+    document.body.style.backgroundColor = "white"
+    fetch("../quiz.json")
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            data.themes.forEach(function(element) {
+                console.log(element);
+                var newDiv = document.createElement("div");
+
+                document.getElementById("theme").appendChild(newDiv).classList.add(element.idtheme);
+                $("." + element.idtheme).append("<h1 onclick=" + "chooseTheme(" + (element.idtheme - 1) + ")" + " > " + element.theme);
+
+
+
+            });
+
+        })
+}
 
 function startTheGame(reponse, data, nombreRandom, allQuestion) {
     document.body.style.backgroundColor = "white"
@@ -68,6 +101,8 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
     document.getElementById("canvas-basic").style.display = "none";
     document.getElementById("hamburger").style.display = "initial";
     document.getElementById("content").style.display = "initial";
+    document.getElementById("titreTheme").style.display = "none";
+
     document.getElementById("Question").innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].question;
     for (var i = 0; i < 4; i++) {
         var emplacement = i + 1;
@@ -76,10 +111,13 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
 }
 
 function checkWin(reponse, data, nombreRandom, allQuestion) {
+
     //Reponse donnee par l'utilisateur
     var additionBonneReponseDonnee = null;
     //Reponse demander par la question
     var addtionBonneReponseQuestion = null;
+
+
     //Calcul en ajoutant dans la variable chaque valeur du tableau puis comparaison de la somme entre les deux tableaux 
     for (var i = 0; i < reponse.length; i++) {
         additionBonneReponseDonnee += reponse[i];
@@ -87,8 +125,11 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
     for (var i = 0; i < data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].ReponsesVraie.length; i++) {
         addtionBonneReponseQuestion += data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].ReponsesVraie[i];
     }
+    console.log(additionBonneReponseDonnee + " Donnee par l'utilisateur")
+    console.log(addtionBonneReponseQuestion + " demander par le quiz")
+
     // Détermine si les réponses sont bonnes
-    if ((additionBonneReponseDonnee == addtionBonneReponseQuestion) && additionBonneReponseDonnee != null) {
+    if ((additionBonneReponseDonnee == addtionBonneReponseQuestion) && additionBonneReponseDonnee != null && reponse.length == data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].ReponsesVraie.length) {
         // document.getElementById("reponsebonne").classList.toggle("anim");
         $("#reponsebonne").toggleClass("anim");
         setTimeout(function() {
