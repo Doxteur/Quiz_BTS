@@ -58,7 +58,7 @@
                     "question": "Quelle égérie de Nintendo prononce cette phrase : « Here we go! »",
                     "reponses": [{
                         "Propositions": ["Donkey Koong", "Sonic", "Luigi", "Mario"],
-                        "ReponsesVraie": [3]
+                        "ReponsesVraie": [2, 3]
                     }]
                 },
                 {
