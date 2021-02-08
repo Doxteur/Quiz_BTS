@@ -59,7 +59,7 @@
                     "question": "Quelle égérie de Nintendo prononce cette phrase : « Here we go! »",
                     "reponses": [{
                         "Propositions": ["Donkey Koong", "Sonic", "Luigi", "Mario"],
-                        "ReponsesVraie": [3]
+                        "ReponsesVraie": [2, 3]
                     }]
                 },
                 {
@@ -88,7 +88,7 @@
             "Questions": [{
                     "id": 1,
                     "nom": "Question1",
-                    "question": "En quelle année le premier jeu vidéo a-t-il été créé ?",
+                    "question": "Quelle est la réference faite avec l'ensemble des modèle de testla ?",
                     "reponses": [{
                         "Propositions": ["1856", "1950", "2005", "1992"],
                         "ReponsesVraie": [1]
@@ -118,11 +118,9 @@
                     "nom": "Question4",
                     "question": "De quelle célèbre série d’infiltration Sam Fisher est-il le héros ?",
                     "reponses": [{
-                            "Propositions": ["Metal Gear", "Tenchu", "Hitman", "Dark Project"],
-                            "ReponsesVraie": [0]
-                        }
-
-                    ]
+                        "Propositions": ["Le mot Ford", "Un cheval qui cambre", "Les lettre F et M", "Un cheval qui court"],
+                        "ReponsesVraie": [3]
+                    }]
                 }
 
 
