@@ -19,9 +19,9 @@ var granimInstance = new Granim({
 // Play Quiz script Temporary
 var questionNumber = 1;
 var numberOfGoodAnswer = 0;
-var allQuestion = [0, 1, 2, 3]; // A changer
-var nombreRandom = getRandomInt(0, (allQuestion.length));
 let themeChoisie = 1;
+var allQuestion = [];
+var nombreRandom;
 // Jimmy1
 function Refresh() {
     document.location.reload();
@@ -63,14 +63,27 @@ function Quiz(reponse) {
 }
 // Quand l'utilisateur a choisie un theme
 function chooseTheme(themeChoisiee) {
+    fetch("../quiz.json")
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data.themes[themeChoisie].Questions.length);
+            for (let i = 0; i < data.themes[themeChoisie].Questions.length; i++) {
+                allQuestion.push(i);
+                console.log(allQuestion)
+            }
+        });
     themeChoisie = themeChoisiee;
     document.getElementById("theme").style.display = "none"
+    nombreRandom = getRandomInt(0, (allQuestion.length));
+
     Quiz(5);
 }
 // Affiche les themes à l'utilisateur
 function showTheme() {
-    document.getElementById("titreTheme").style.display = "initial"
 
+    document.getElementById("titreTheme").style.display = "initial"
     document.getElementById("hamburger").style.display = "initial"
     document.getElementById("theme").style.display = "flex"
     document.getElementById("select").style.display = "none";
@@ -84,12 +97,8 @@ function showTheme() {
             data.themes.forEach(function(element) {
                 console.log(element);
                 var newDiv = document.createElement("div");
-
                 document.getElementById("theme").appendChild(newDiv).classList.add(element.idtheme);
                 $("." + element.idtheme).append("<h1 onclick=" + "chooseTheme(" + (element.idtheme - 1) + ")" + " > " + element.theme);
-
-
-
             });
 
         })
@@ -104,7 +113,7 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
     document.getElementById("titreTheme").style.display = "none";
 
     document.getElementById("Question").innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].question;
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions.length; i++) {
         var emplacement = i + 1;
         document.getElementById(emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions[i];
     }

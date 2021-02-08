@@ -7,10 +7,11 @@
                     "nom": "Question1",
                     "question": "Qui est l'auteur des fables de la fontaine ?",
                     "reponses": [{
-                        "Propositions": ["Jean de la fontaine", "Jean patrick bernard", "Mozart", "Beethoven"],
+                        "Propositions": ["Jean de la fontaine", "Jean patrick bernard", "Mozart"],
                         "ReponsesVraie": [0]
                     }]
                 },
+
                 {
                     "id": 2,
                     "nom": "Question2",
@@ -58,7 +59,7 @@
                     "question": "Quelle égérie de Nintendo prononce cette phrase : « Here we go! »",
                     "reponses": [{
                         "Propositions": ["Donkey Koong", "Sonic", "Luigi", "Mario"],
-                        "ReponsesVraie": [2, 3]
+                        "ReponsesVraie": [3]
                     }]
                 },
                 {
