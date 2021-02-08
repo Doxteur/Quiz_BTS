@@ -58,7 +58,7 @@
                     "question": "Quelle égérie de Nintendo prononce cette phrase : « Here we go! »",
                     "reponses": [{
                         "Propositions": ["Donkey Koong", "Sonic", "Luigi", "Mario"],
-                        "ReponsesVraie": [3]
+                        "ReponsesVraie": [2, 3]
                     }]
                 },
                 {
@@ -87,7 +87,7 @@
             "Questions": [{
                     "id": 1,
                     "nom": "Question1",
-                    "question": "Quelle est la réference fait avec l'ensemble des modèle de testla ?",
+                    "question": "Quelle est la réference faite avec l'ensemble des modèle de testla ?",
                     "reponses": [{
                         "Propositions": ["PIXY", "SEXY", "TAXY", "WEXY"],
                         "ReponsesVraie": [1]
@@ -117,7 +117,7 @@
                     "nom": "Question4",
                     "question": "Le Logo de Ford Mustang est représenté par :",
                     "reponses": [{
-                        "Propositions": ["Un trèfle", "Un cheval qui cambre", "Les lettre F et M", "Un cheval qui court"],
+                        "Propositions": ["Le mot Ford", "Un cheval qui cambre", "Les lettre F et M", "Un cheval qui court"],
                         "ReponsesVraie": [3]
                     }]
                 }
@@ -179,53 +179,3 @@
         }
     ]
 }
-
-/*  {
-            "idtheme": 3,
-            "theme": "voiture",
-            "Questions": [{
-                    "id": 1,
-                    "nom": "Question1",
-                    "question": "En quelle année le premier jeu vidéo a-t-il été créé ?",
-                    "reponses": [{
-                        "Propositions": ["1856", "1950", "2005", "1992"],
-                        "ReponsesVraie": [1]
-
-                    }]
-                },
-                {
-                    "id": 2,
-                    "nom": "Question2",
-                    "question": "Quelle égérie de Nintendo prononce cette phrase : « Here we go! »",
-                    "reponses": [{
-                        "Propositions": ["Donkey Koong", "Sonic", "Luigi", "Mario"],
-                        "ReponsesVraie": [3, 2] 
-                    }]
-                },
-                {
-                    "id": 3,
-                    "nom": "Question3",
-                    "question": "Dans quelle celebre jeux peut on entendre la phrase 'Encore du travail'?",
-                    "reponses": [{
-                        "Propositions": ["Starcraft", "Warcraft", "OverWatch", "Minecraft"],
-                        "ReponsesVraie": [1]
-                    }]
-                },
-                {
-                    "id": 4,
-                    "nom": "Question4",
-                    "question": "De quelle célèbre série d’infiltration Sam Fisher est-il le héros ?",
-                    "reponses": [{
-                            "Propositions": ["Metal Gear", "Tenchu", "Hitman", "Dark Project"],
-                            "ReponsesVraie": [0]
-                        }
-
-                    ]
-                }
-
-
-
-
-
-            ]
-        }, */
