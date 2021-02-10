@@ -6,16 +6,13 @@
     padding: 0px;
 }
 
-a {
-    color: white;
-    text-decoration: none;
-}
 
 body {
     font-family: sans-serif;
+  
 }
 
-.context {
+/* .context {
     font-family: 'Luckiest Guy', cursive;
     width: 100%;
     position: absolute;
@@ -29,7 +26,44 @@ body {
     text-align: center;
     color: #fff;
     font-size: 120px;
-}
+} */
+
+
+
+div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 80px;
+    width: 100%;
+  }
+  
+  a {
+    top: 0;
+    color: white;
+    text-decoration: none;
+    padding: 100;
+  }
+  
+  a:after {    
+    content: "";
+    height: 5px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  a:hover:after { 
+    width: 40%; 
+    left: 30%; 
+    text-align: center;
+  }
+  
+  
+
 
 .area {
     background: #f5bb29;
@@ -145,3 +179,5 @@ body {
         border-radius: 50%;
     }
 }
+
+  
