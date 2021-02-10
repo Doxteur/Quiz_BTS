@@ -4,6 +4,11 @@
     padding: 0px;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 body {
     font-family: sans-serif;
 }
