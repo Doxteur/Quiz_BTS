@@ -1,20 +1,4 @@
 //Itération 6
-var granimInstance = new Granim({
-    element: '#canvas-basic',
-    name: 'basic-gradient',
-    direction: 'left-right',
-    opacity: [1, 1],
-    isPausedWhenNotInView: true,
-    states: {
-        "default-state": {
-            gradients: [
-                ['#AA076B', '#61045F'],
-                ['#02AAB0', '#00CDAC'],
-                ['#DA22FF', '#9733EE']
-            ]
-        }
-    }
-});
 
 // Play Quiz script Temporary
 var questionNumber = 1;
@@ -94,8 +78,7 @@ function showTheme() {
     document.getElementById("titreTheme").style.display = "initial"
     document.getElementById("hamburger").style.display = "initial"
     document.getElementById("theme").style.display = "flex"
-    document.getElementById("select").style.display = "none";
-    document.getElementById("canvas-basic").style.display = "none";
+    document.getElementById("container").style.display = "none";
     document.body.style.backgroundColor = "white"
     fetch("../quiz.json")
         .then(function(response) {
@@ -114,8 +97,7 @@ function showTheme() {
 function startTheGame(reponse, data, nombreRandom, allQuestion) {
 
     document.body.style.backgroundColor = "white"
-    document.getElementById("select").style.display = "none";
-    document.getElementById("canvas-basic").style.display = "none";
+    document.getElementById("container").style.display = "none";
     document.getElementById("hamburger").style.display = "initial";
     document.getElementById("content").style.display = "initial";
     document.getElementById("titreTheme").style.display = "none";
