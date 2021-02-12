@@ -42,7 +42,7 @@ La partie créateur est un emplacement que vous retrouverez au début du quiz il
 
 Voci un exemple :
 
-![](RackMultipart20210206-4-mpepoa_html_2d86cd6b90390e92.png)
+![](Images/tutocreateur.png)
 
 # **Ajout de Question**
 
@@ -54,11 +54,11 @@ Chaque question débute avec un {et finie avec un } tous ce qui se trouve dedans
 
 **Important !** faites attentions chaque question finie par un **« , » (virgule)** sauf la dernière. La dernière ne doit surtout **pas avoir de virgule**.
 
-![](RackMultipart20210206-4-mpepoa_html_9341af7dd87d34f8.png)
+![](Images/tuto2.png)
 
 # **Ajout de Thème**
 
-L&#39;ajout de thème ressemble très fortement à l&#39;ajout de question cependant il faudra prendre le « **{** »se trouvant juste après le « **[** ». Voici un exemple plus compréhensible : ![](RackMultipart20210206-4-mpepoa_html_91803b55144bb618.png)
+L&#39;ajout de thème ressemble très fortement à l&#39;ajout de question cependant il faudra prendre le « **{** »se trouvant juste après le « **[** ». Voici un exemple plus compréhensible : ![](Images/tuto3.png)
 
 Il y a deux theme dans cet image le theme Divers et Jeux Vidéo il vous suffit de copier coller un theme dessous un autre mais comme pour les questions n&#39;oublier pas d&#39;augmenter idtheme.
 
