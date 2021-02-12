@@ -14,26 +14,7 @@
 
 
 <body>
-    <canvas id="canvas-basic"></canvas>
 
-    <img src="Images/hamburger.png" alt="Hamburger" id="hamburger" style="display: none;">
-
-    <div id="leftHeader">
-        <h1 id="title" onclick="Refresh()"><span>Q</span>uiz</h1>
-        <div id="inner_header">
-            <a href="createur.html">
-                <h1>Createur</h1>
-            </a>
-            <h1>Joueur</h1>
-        </div>
-    </div>
-    <div class="svg-wrapper" id="wrapper">
-        <svg height="90" width="420" xmlns="http://www.w3.org/2000/svg">
-            <rect class="shape" height="90" width="420" />
-
-            <div class="text" id="start"><a href="Choose/choose.html"> LE QUIZ</a></div>
-        </svg>
-    </div>
     <!-- 
     <button id="start" onclick="Quiz(5)">
              Start the quiz
@@ -41,16 +22,30 @@
     -->
 
 
-
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
     <script src="script.js"></script>
 
 
-    <footer>
-        <div>
-            <a href="#"><img src="Images/help.png" alt="" class="smaller"></a>
-            <a href="#"><img src="Images/option.png" alt=""></a>
-        </div>
-    </footer>
+    <div class="context">
+        <a href="Choose/choose.html">
+            <h1>Le Quiz</h1>
+        </a>
+    </div>
+<!-- https://codepen.io/tonkec/pen/jWmgqN -->
+
 </body>
 
 </html>
