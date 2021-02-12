@@ -76,8 +76,17 @@
                     "nom": "Question4",
                     "question": "De quelle célèbre série d’infiltration Sam Fisher est-il le héros ?",
                     "reponses": [{
-                        "Propositions": ["Metal Gear", "Tenchu", "Hitman", "Dark Project"],
-                        "ReponsesVraie": [0]
+                        "Propositions": ["Metal Gear", "Tenchu", "Splinter Cell", "Dark Project"],
+                        "ReponsesVraie": [2]
+                    }]
+                },
+                {
+                    "id": 5,
+                    "nom": "Question5",
+                    "question": "La fameuse question 5",
+                    "reponses": [{
+                        "Propositions": ["a", "b", "c", "d"],
+                        "ReponsesVraie": [2]
                     }]
                 }
             ]
