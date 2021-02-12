@@ -16,7 +16,7 @@ Le quiz est personnalisable. Il peut contenir plusieurs questions avec un certai
 
 Pour fonctionner ce quiz utilise ce que l&#39;on appelle un fichier Json. Ce fichier n&#39;est pas très permissif. C&#39;est vrai il vous permettra de modifier n&#39;importe quelle question mais il faudra respecter parfaitement la syntaxe ne vous inquiétez pas tout est expliqué.
 
-Voici une partie du fichier json : ![](RackMultipart20210206-4-mpepoa_html_66e43a9a44055ce1.png)
+Voici une partie du fichier json : ![](Images/tuto4.png)
 
 Voici le **premier theme** Divers comme on peut le voir **ligne 4** , rien ne vous empeche de renommer le nom du theme en **changeant tout simplement le text**.
 
