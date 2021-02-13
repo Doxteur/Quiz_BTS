@@ -291,23 +291,23 @@ button:not(#hamburger) {
 }
 
 #l1:hover {
-    background-color: #E94D4D;
+    background-color: #E94D4D !important;
     border-radius: 50px;
 }
 
 #l2:hover {
     border-radius: 50px;
-    background-color: #4ACBDE;
+    background-color: #4ACBDE !important;
 }
 
 #l3:hover {
     border-radius: 50px;
-    background-color: #E7DF27;
+    background-color: #E7DF27 !important;
 }
 
 #l4:hover {
     border-radius: 50px;
-    background-color: #8211B8;
+    background-color: #8211B8 !important;
 }
 
 #Valide:hover {

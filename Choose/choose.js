@@ -30,7 +30,6 @@ function Quiz(reponse) {
             return response.json();
         })
         .then(function(data) {
-
             if (data.themes[themeChoisie].nombreDeQuestionATirer != undefined) {
                 $("#nombreQuestion").html("Question " + questionNumber + " / " + data.themes[themeChoisie].nombreDeQuestionATirer);
             } else {
@@ -58,6 +57,12 @@ function Quiz(reponse) {
             }
 
             questionNumber++;
+
+            if (data.themes[themeChoisie].nombreDeQuestionATirer != undefined) {
+                $("#nombreQuestion").html("Question " + questionNumber + " / " + data.themes[themeChoisie].nombreDeQuestionATirer);
+            } else {
+                $("#nombreQuestion").html("Question " + questionNumber + " / " + data.themes[themeChoisie].Questions.length);
+            }
         });
 }
 // Quand l'utilisateur a choisie un theme
@@ -180,6 +185,7 @@ function multipleReponse(nombreChoisie) {
         if (reponseM[i] == nombreChoisie) {
             reponseM.splice(i, 1);
             document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.border = "solid 4px transparent";
+            document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.backgroundColor = "white";
 
             return 0;
         }
@@ -188,11 +194,30 @@ function multipleReponse(nombreChoisie) {
     document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.border = "solid 4px black";
     document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.borderRadius = "50px";
 
+    switch (nombreChoisie + 1) {
+        case 1:
+            document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.backgroundColor = "#E94D4D";
+            break;
+        case 2:
+            document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.backgroundColor = "#4ACBDE";
+            break;
+        case 3:
+            document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.backgroundColor = "#E7DF27";
+            break;
+        case 4:
+            document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.backgroundColor = "#8211B8";
+            break;
+    }
+
+    document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.borderRadius = "50px";
+
+
 }
 
 function validation() {
     for (var i = 1; i <= 4; i++) {
         document.getElementById("l" + i.toString()).style.border = "solid 4px transparent";
+        document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.backgroundColor = "white";
 
     }
     Quiz(reponseM);
