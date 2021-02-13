@@ -8,6 +8,38 @@ body {
     background-color: #f7e8d8d5;
 }
 
+#connect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+#connect input {
+    height: 25px;
+    padding: 5px;
+    font-size: 25px;
+    margin: 15px;
+}
+
+#connect h3 {
+    text-align: center;
+    cursor: pointer;
+}
+
+#connect h3:hover {
+    color: red;
+}
+
+#wrongPassword {
+    display: none;
+    text-align: center;
+}
+
 button:not(#hamburger) {
     position: absolute;
     top: 50%;
@@ -113,4 +145,8 @@ button:not(#hamburger) {
 
 span {
     color: red;
+}
+
+#allQuestion {
+    display: none;
 }

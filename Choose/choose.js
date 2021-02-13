@@ -50,7 +50,7 @@ function Quiz(reponse) {
             document.getElementById("Question").innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].question;
             for (var i = 0; i < 4; i++) {
                 var emplacement = i + 1;
-                document.getElementById(emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions[i];
+                document.getElementById("l" + emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions[i];
             }
             questionNumber++;
         });
@@ -79,7 +79,7 @@ function showTheme() {
     document.getElementById("hamburger").style.display = "initial"
     document.getElementById("theme").style.display = "flex"
     document.getElementById("container").style.display = "none";
-    document.body.style.backgroundColor = "white"
+    document.body.style.backgroundColor = "#FFC122"
     fetch("../quiz.json")
         .then(function(response) {
             return response.json();
@@ -96,7 +96,7 @@ function showTheme() {
 
 function startTheGame(reponse, data, nombreRandom, allQuestion) {
 
-    document.body.style.backgroundColor = "white"
+    document.body.style.backgroundColor = "#FFC122"
     document.getElementById("container").style.display = "none";
     document.getElementById("hamburger").style.display = "initial";
     document.getElementById("content").style.display = "initial";
@@ -105,7 +105,7 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
     document.getElementById("Question").innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].question;
     for (var i = 0; i < data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions.length; i++) {
         var emplacement = i + 1;
-        document.getElementById(emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions[i];
+        document.getElementById("l" + emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions[i];
     }
     if (checkValideJson(data)) {
         $("#wrongJson").css("display", "initial");
@@ -166,17 +166,21 @@ function multipleReponse(nombreChoisie) {
     for (var i = 0; i < 4; i++) {
         if (reponseM[i] == nombreChoisie) {
             reponseM.splice(i, 1);
-            document.getElementById((nombreChoisie + 1).toString()).style.border = "solid 4px transparent";
+            document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.border = "solid 4px transparent";
+
             return 0;
         }
     }
     reponseM.push(nombreChoisie);
-    document.getElementById((nombreChoisie + 1).toString()).style.border = "solid 4px black";
+    document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.border = "solid 4px black";
+    document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.borderRadius = "50px";
+
 }
 
 function validation() {
     for (var i = 1; i <= 4; i++) {
-        document.getElementById(i.toString()).style.border = "solid 4px transparent";
+        document.getElementById("l" + i.toString()).style.border = "solid 4px transparent";
+
     }
     Quiz(reponseM);
     reponseM = [];

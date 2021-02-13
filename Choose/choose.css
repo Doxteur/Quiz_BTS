@@ -196,9 +196,9 @@ button:not(#hamburger) {
 #hamburger {
     position: absolute;
     left: 0;
-    width: 55px;
-    height: 55px;
-    margin: 10px;
+    width: 50px;
+    height: 45px;
+    margin: 20px;
     transition: transform 1s;
     z-index: 150;
 }
@@ -257,17 +257,22 @@ button:not(#hamburger) {
 
 #question {
     font-family: 'Titillium Web', sans-serif;
-    padding-top: 10%;
-    font-size: 30px;
+    padding-top: 7%;
+    font-size: 35px;
     text-align: center;
+    width: 70%;
+    margin: auto;
 }
 
 #question h2 {
-    color: #FFC122;
+    padding: 35px;
+    background-color: white;
+    border: #4ACBDE 10px solid;
+    color: black;
 }
 
 #reponse {
-    padding-top: 3.5%;
+    margin-top: 3.5%;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -285,24 +290,36 @@ button:not(#hamburger) {
     z-index: 45;
 }
 
-.div1 {
+#l1:hover {
     background-color: #E94D4D;
+    border-radius: 50px;
 }
 
-.div2 {
+#l2:hover {
+    border-radius: 50px;
     background-color: #4ACBDE;
 }
 
-.div3 {
+#l3:hover {
+    border-radius: 50px;
     background-color: #E7DF27;
 }
 
-.div4 {
-    background-color: #62D62C;
+#l4:hover {
+    border-radius: 50px;
+    background-color: #8211B8;
 }
 
-.Valide {
-    background-color: #8211B8;
+#Valide:hover {
+    background-color: #62D62C;
+    border-radius: 50px;
+}
+
+#reponse div {
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: #4ACBDE;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 #reponse h1 {
@@ -310,7 +327,7 @@ button:not(#hamburger) {
     vertical-align: middle;
     font-size: 30px;
     text-align: center;
-    color: white;
+    color: black;
     font-family: 'Titillium Web', sans-serif;
 }
 
@@ -418,7 +435,7 @@ footer img {
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
-    color: #FFC122;
+    color: white;
     font-size: 55px;
     font-weight: bold;
     font-family: sans-serif;
@@ -429,6 +446,5 @@ footer img {
 * {
     padding: 0px;
     margin: 0px;
-    transition: all 0.8s ease;
     font-family: "Poppins", sans-serif;
 }
