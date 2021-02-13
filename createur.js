@@ -15,28 +15,27 @@ function showQuestion() {
                     // document.getElementById("allQuestion").appendChild(newDiv).classList.add(element.nom);
                     //Affichage Question
                     $("." + tempName).append("<h1>" + themeElement.question + "</h1>");
-                    for (var i = 0; i < themeElement.reponses[0].Propositions.length; i++) {
-                        $("." + tempName).append("<h2>" + themeElement.reponses[0].Propositions[i] + "</h2>");
+                    for (var i = 0; i < themeElement.reponses.Propositions.length; i++) {
+                        $("." + tempName).append("<h2>" + themeElement.reponses.Propositions[i] + "</h2>");
                     }
                     $("." + tempName).append("</br>");
-                    for (var j = 0; j < themeElement.reponses[0].ReponsesVraie.length; j++) {
-                        $("." + tempName).append("<h1> La bonne réponse est : <span>" + themeElement.reponses[0].Propositions[themeElement.reponses[0].ReponsesVraie[j]] + " </span></h1>");
+                    for (var j = 0; j < themeElement.reponses.ReponsesVraie.length; j++) {
+                        $("." + tempName).append("<h1> La bonne réponse est : <span>" + themeElement.reponses.Propositions[themeElement.reponses.ReponsesVraie[j]] + " </span></h1>");
                     }
                     $("." + tempName).append("</br>");
                     //
                     // $("." + element.nom).append("</br>");
                     // $("." + element.nom).append("<h3> La bonne réponse est : </h3>")
                     // $("." + element.nom).append("</br>");
-                    // for (let i = 0; i < element.reponses[0].ReponsesVraie.length; i++) {
-                    //     $("." + element.nom).append("<h2>" + element.reponses[0].Propositions[element.reponses[0].ReponsesVraie[i]])
+                    // for (let i = 0; i < element.reponses.ReponsesVraie.length; i++) {
+                    //     $("." + element.nom).append("<h2>" + element.reponses.Propositions[element.reponses.ReponsesVraie[i]])
                     // }
                     // console.log(element.nom);
-                    // console.log(element.reponses[0].ReponsesVraie)
+                    // console.log(element.reponses.ReponsesVraie)
                 });
             });
         });
 }
-showQuestion();
 //Auto compile tsc *.ts --watch
 //Animation HTML
 var btn = document.getElementById("hamburger");
@@ -54,7 +53,7 @@ function displayQuest() {
 function connect() {
     let password = document.getElementById("valueInput").value;
     if (password == "Caramel" || password == "caramel") {
-        document.getElementById("allQuestion").style.display = "flex"
+        showQuestion();
     } else {
         document.getElementById("wrongPassword").style.display = "initial"
     }

@@ -18,7 +18,7 @@ function getRandomInt(min, max) {
 function checkValideJson(data) {
 
     for (let j = 0; j < data.themes[themeChoisie].Questions.length; j++) {
-        if (data.themes[themeChoisie].Questions[j].reponses[0].Propositions.length == 0 || data.themes[themeChoisie].Questions[j].reponses[0].ReponsesVraie.length == 0) {
+        if (data.themes[themeChoisie].Questions[j].reponses.Propositions.length == 0 || data.themes[themeChoisie].Questions[j].reponses.ReponsesVraie.length == 0) {
             return 1;
         }
     }
@@ -50,7 +50,7 @@ function Quiz(reponse) {
             document.getElementById("Question").innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].question;
             for (var i = 0; i < 4; i++) {
                 var emplacement = i + 1;
-                document.getElementById("l" + emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions[i];
+                document.getElementById("l" + emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses.Propositions[i];
             }
             questionNumber++;
         });
@@ -103,9 +103,9 @@ function startTheGame(reponse, data, nombreRandom, allQuestion) {
     document.getElementById("titreTheme").style.display = "none";
 
     document.getElementById("Question").innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].question;
-    for (var i = 0; i < data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions.length; i++) {
+    for (var i = 0; i < data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses.Propositions.length; i++) {
         var emplacement = i + 1;
-        document.getElementById("l" + emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions[i];
+        document.getElementById("l" + emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses.Propositions[i];
     }
     if (checkValideJson(data)) {
         $("#wrongJson").css("display", "initial");
@@ -125,12 +125,12 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
     for (var i = 0; i < reponse.length; i++) {
         additionBonneReponseDonnee += reponse[i];
     }
-    for (var i = 0; i < data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].ReponsesVraie.length; i++) {
-        addtionBonneReponseQuestion += data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].ReponsesVraie[i];
+    for (var i = 0; i < data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses.ReponsesVraie.length; i++) {
+        addtionBonneReponseQuestion += data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses.ReponsesVraie[i];
     }
 
     // Détermine si les réponses sont bonnes
-    if ((additionBonneReponseDonnee == addtionBonneReponseQuestion) && additionBonneReponseDonnee != null && reponse.length == data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].ReponsesVraie.length) {
+    if ((additionBonneReponseDonnee == addtionBonneReponseQuestion) && additionBonneReponseDonnee != null && reponse.length == data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses.ReponsesVraie.length) {
         // document.getElementById("reponsebonne").classList.toggle("anim");
         $("#reponsebonne").toggleClass("anim");
         setTimeout(function() {

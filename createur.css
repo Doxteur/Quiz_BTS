@@ -146,7 +146,3 @@ button:not(#hamburger) {
 span {
     color: red;
 }
-
-#allQuestion {
-    display: none;
-}
