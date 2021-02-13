@@ -31,7 +31,11 @@ function Quiz(reponse) {
         })
         .then(function(data) {
 
-            //Affiche le theme
+            if (data.themes[themeChoisie].nombreDeQuestionATirer != undefined) {
+                $("#nombreQuestion").html("Question " + questionNumber + " / " + data.themes[themeChoisie].nombreDeQuestionATirer);
+            } else {
+                $("#nombreQuestion").html("Question " + questionNumber + " / " + data.themes[themeChoisie].Questions.length);
+            }
             //Start the Game 
             if (reponse == 5) {
                 startTheGame(reponse, data, nombreRandom, allQuestion);
@@ -52,6 +56,7 @@ function Quiz(reponse) {
                 var emplacement = i + 1;
                 document.getElementById("l" + emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses.Propositions[i];
             }
+
             questionNumber++;
         });
 }

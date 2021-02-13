@@ -393,12 +393,40 @@ footer img {
     width: 40px;
 }
 
+#themes {
+    transform: scale(2);
+    margin: 55px;
+    background-color: #07C0F2;
+}
+
+#themes option {
+    font-size: 20px;
+}
+
+option:after {
+    background-color: white;
+    font-size: 35px;
+}
+
 #themeSelector {
     display: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#themeChoose {
+    color: white;
+    font-size: 35px;
+    transition: all 1s;
+    cursor: pointer;
+    border: solid transparent 5px;
+}
+
+#themeChoose:hover {
+    color: red;
+    border: solid #4ACBDE 5px;
 }
 
 #titreTheme {
@@ -411,7 +439,7 @@ footer img {
     font-size: 55px;
     font-weight: bold;
     font-family: sans-serif;
-    padding-top: 200px;
+    padding-top: 300px;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Poppins");
@@ -419,4 +447,12 @@ footer img {
     padding: 0px;
     margin: 0px;
     font-family: "Poppins", sans-serif;
+}
+
+#nombreQuestion {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    font-size: 40px;
+    color: white;
 }
