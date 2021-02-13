@@ -7,7 +7,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="choose.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../node_modules/granim/dist/granim.min.js"></script>
 
 </head>
 
@@ -43,8 +42,15 @@
 
 
     <h1 id="titreTheme">Choisir votre theme :</h1>
-    <div id="theme">
+    <div id="themeSelector">
+        <select name="themes" id="themes">
+            <option value="">--Please choose an option--</option>
+        
+        </select>
+        <h1 id="themeChoose" onclick="checkThemeChoose()">Choisir</h1>
     </div>
+    <!-- <div id="theme">
+    </div> -->
 
     <img src="../Images/hamburger.png" alt="Hamburger" id="hamburger" style="display: none;">
 
@@ -60,29 +66,32 @@
         </div>
     </div>
 
+    <h3 id="nombreQuestion"></h3>
     <div id="content">
         <div id="question">
             <h1 id="titreQuestion"></h1>
             <h2 id="Question"></h2>
         </div>
+
         <div id="reponse">
             <div class="div1">
-                <h1 id="1" onclick="multipleReponse(0)"></h1>
+                <h1 id="l1" onclick="multipleReponse(0)"></h1>
             </div>
             <div class="div2">
-                <h1 id="2" onclick="multipleReponse(1)"></h1>
+                <h1 id="l2" onclick="multipleReponse(1)"></h1>
             </div>
             <div class="div3">
-                <h1 id="3" onclick="multipleReponse(2)"></h1>
+                <h1 id="l3" onclick="multipleReponse(2)"></h1>
             </div>
             <div class="div4">
-                <h1 id="4" onclick="multipleReponse(3)"></h1>
+                <h1 id="l4" onclick="multipleReponse(3)"></h1>
             </div>
             <div class="Valide">
                 <h1 id="Valide" onclick="validation()">Validé</h1>
             </div>
         </div>
     </div>
+
     <div id="ecranFin">
         <h1 id="finText">FIN</h1>
         <h1 id="nombreDeReponse">Nombre de bonne réponse : </h1>

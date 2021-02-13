@@ -1,43 +1,53 @@
 {
     "themes": [{
+
             "idtheme": 1,
             "theme": "Divers",
+            "nombreDeQuestionATirer": 5,
             "Questions": [{
                     "id": 1,
                     "nom": "Question1",
                     "question": "Qui est l'auteur des fables de la fontaine ?",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["Jean de la fontaine", "Jean patrick bernard", "Mozart"],
                         "ReponsesVraie": [0]
-                    }]
+                    }
                 },
 
                 {
                     "id": 2,
                     "nom": "Question2",
                     "question": "Qui est Elton John ?",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["Un Rappeur", "Un chanteur", "Un astronaute", "Un champion de karting"],
                         "ReponsesVraie": [1]
-                    }]
+                    }
                 },
                 {
                     "id": 3,
                     "nom": "Question3",
                     "question": "Quels sont les langages informatique les plus utilisés dans les pages web ?",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["HTML", "PHP", "CSS", "Python"],
                         "ReponsesVraie": [0, 1, 2]
-                    }]
+                    }
                 },
                 {
                     "id": 4,
                     "nom": "Question4",
                     "question": "Qu’est-ce qu’une adresse IP ?",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["Un numéro qui identifie chaque matériel informatique", "Le protocole de communication utilisé sur Internet", " L’adresse d’un site web, commençant par 'http://'", "L'adresse d'une maison"],
                         "ReponsesVraie": [0]
-                    }]
+                    }
+                }, {
+                    "id": 5,
+                    "nom": "Question5",
+                    "question": "Qu’est-ce qu’une adresazezase IP ?",
+                    "reponses": {
+                        "Propositions": ["Un numéro qui identifie chaque matériel informatique", "Le protocole de communication utilisé sur Internet", " L’adresse d’un site web, commençant par 'http://'", "L'adresse d'une maison"],
+                        "ReponsesVraie": [0]
+                    }
                 }
             ]
         },
@@ -48,88 +58,89 @@
                     "id": 1,
                     "nom": "Question1",
                     "question": "En quelle année le premier jeu vidéo a-t-il été créé ?",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["1856", "1950", "2005", "1992"],
                         "ReponsesVraie": [1]
-                    }]
+                    }
                 },
                 {
                     "id": 2,
                     "nom": "Question2",
                     "question": "Quelle égérie de Nintendo prononce cette phrase : « Here we go! »",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["Donkey Koong", "Sonic", "Luigi", "Mario"],
                         "ReponsesVraie": [2, 3]
-                    }]
+                    }
                 },
                 {
                     "id": 3,
                     "nom": "Question3",
                     "question": "Dans quelle celebre jeux peut on entendre la phrase 'Encore du travail'?",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["Starcraft", "Warcraft", "OverWatch", "Minecraft"],
                         "ReponsesVraie": [1]
-                    }]
+                    }
                 },
                 {
                     "id": 4,
                     "nom": "Question4",
                     "question": "De quelle célèbre série d’infiltration Sam Fisher est-il le héros ?",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["Metal Gear", "Tenchu", "Splinter Cell", "Dark Project"],
                         "ReponsesVraie": [2]
-                    }]
+                    }
                 },
                 {
                     "id": 5,
                     "nom": "Question5",
                     "question": "La fameuse question 5",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["a", "b", "c", "d"],
                         "ReponsesVraie": [2]
-                    }]
+                    }
                 }
             ]
         },
         {
             "idtheme": 3,
             "theme": "voiture",
+            "nombreDeQuestionATirer": 1,
             "Questions": [{
                     "id": 1,
                     "nom": "Question1",
                     "question": "Quelle est la réference faite avec l'ensemble des modèle de testla ?",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["PIXY", "SEXY", "WAXY", "TAXY"],
                         "ReponsesVraie": [1]
 
-                    }]
+                    }
                 },
                 {
                     "id": 2,
                     "nom": "Question2",
                     "question": "Par quoi est représenté le logo de Ford Mustang ?",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["Le mot FORD", "Les lettres F et M ", "Un cheval qui cambre", "Un cheval qui court"],
                         "ReponsesVraie": [3]
-                    }]
+                    }
                 },
                 {
                     "id": 3,
                     "nom": "Question3",
                     "question": "Quels sont les éléments/objets, à avoir obligatoirement dans son véhicule ?",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["Constat amiable", "Disque de stationnement", "Roue de secours", "Gilet rétroréfléchissant"],
                         "ReponsesVraie": [1, 3]
-                    }]
+                    }
                 },
                 {
                     "id": 4,
                     "nom": "Question4",
                     "question": "Quelle voiture à été le plus vendu pendant l'année 2020 ?",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["Peugeot 208", "Volkswagen Polo", "Renault Clio", "Renault Zoé"],
                         "ReponsesVraie": [2]
-                    }]
+                    }
                 }
 
 
@@ -145,40 +156,40 @@
                     "id": 1,
                     "nom": "Question1",
                     "question": "Quels sont les prénoms de 2 frères McDonald qui ont créé la célèbre chaîne du même nom ?",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["John et Peter", "Richard et Maurice", "Anthony et Carlos", "Michael et Tom"],
                         "ReponsesVraie": [1]
 
-                    }]
+                    }
                 },
                 {
                     "id": 2,
                     "nom": "Question2",
                     "question": "Quelle chaîne de restauration rapide française haut de gamme a été créée en 2002 par Olivier Bertrand ?",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["La Brioche dorée", "La Mie câline", "Bert's", "Paul"],
                         "ReponsesVraie": [2]
-                    }]
+                    }
                 },
                 {
                     "id": 3,
                     "nom": "Question3",
                     "question": "Chez Quick, quel rugbyman a laissé son nom a un hamburger ?",
-                    "reponses": [{
+                    "reponses": {
                         "Propositions": ["Fabien Pelous", "Sébastien Chabal", "Jonah Lomu", "Frédéric Michalak"],
                         "ReponsesVraie": [3]
-                    }]
+                    }
                 },
                 {
                     "id": 4,
                     "nom": "Question4",
                     "question": "À part le Sub15, quelle est l'autre taille de sandwich Subway ?",
-                    "reponses": [{
-                            "Propositions": ["Sub30", "Sub25", "Sub20", "Sub45"],
-                            "ReponsesVraie": [0]
-                        }
+                    "reponses": {
+                        "Propositions": ["Sub30", "Sub25", "Sub20", "Sub45"],
+                        "ReponsesVraie": [0]
+                    }
 
-                    ]
+
                 }
 
 

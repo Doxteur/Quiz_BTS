@@ -196,9 +196,9 @@ button:not(#hamburger) {
 #hamburger {
     position: absolute;
     left: 0;
-    width: 55px;
-    height: 55px;
-    margin: 10px;
+    width: 50px;
+    height: 45px;
+    margin: 20px;
     transition: transform 1s;
     z-index: 150;
 }
@@ -257,17 +257,22 @@ button:not(#hamburger) {
 
 #question {
     font-family: 'Titillium Web', sans-serif;
-    padding-top: 10%;
-    font-size: 30px;
+    padding-top: 7%;
+    font-size: 35px;
     text-align: center;
+    width: 70%;
+    margin: auto;
 }
 
 #question h2 {
-    color: #FFC122;
+    padding: 35px;
+    background-color: white;
+    border: #4ACBDE 10px solid;
+    color: black;
 }
 
 #reponse {
-    padding-top: 3.5%;
+    margin-top: 3.5%;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -285,24 +290,36 @@ button:not(#hamburger) {
     z-index: 45;
 }
 
-.div1 {
-    background-color: #E94D4D;
+#l1:hover {
+    background-color: #E94D4D !important;
+    border-radius: 50px;
 }
 
-.div2 {
-    background-color: #4ACBDE;
+#l2:hover {
+    border-radius: 50px;
+    background-color: #4ACBDE !important;
 }
 
-.div3 {
-    background-color: #E7DF27;
+#l3:hover {
+    border-radius: 50px;
+    background-color: #E7DF27 !important;
 }
 
-.div4 {
+#l4:hover {
+    border-radius: 50px;
+    background-color: #8211B8 !important;
+}
+
+#Valide:hover {
     background-color: #62D62C;
+    border-radius: 50px;
 }
 
-.Valide {
-    background-color: #8211B8;
+#reponse div {
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: #4ACBDE;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 #reponse h1 {
@@ -310,7 +327,7 @@ button:not(#hamburger) {
     vertical-align: middle;
     font-size: 30px;
     text-align: center;
-    color: white;
+    color: black;
     font-family: 'Titillium Web', sans-serif;
 }
 
@@ -376,40 +393,40 @@ footer img {
     width: 40px;
 }
 
-#theme {
-    /* display: none; */
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+#themes {
+    transform: scale(2);
+    margin: 55px;
+    background-color: #07C0F2;
+}
+
+#themes option {
+    font-size: 20px;
+}
+
+option:after {
+    background-color: white;
+    font-size: 35px;
+}
+
+#themeSelector {
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-#theme div {
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-top: 50px;
-    width: 250px;
-    height: 125px;
-    background-color: #3A7BDE;
+#themeChoose {
     color: white;
-    font-family: sans-serif;
-    display: table;
-    border-radius: 50px;
-    transition: font-size 0.5s;
-}
-
-#theme div:hover {
-    font-size: large;
-}
-
-#theme div>h1 {
-    display: table-cell;
-    vertical-align: middle;
+    font-size: 35px;
+    transition: all 1s;
     cursor: pointer;
+    border: solid transparent 5px;
+}
+
+#themeChoose:hover {
+    color: red;
+    border: solid #4ACBDE 5px;
 }
 
 #titreTheme {
@@ -418,17 +435,24 @@ footer img {
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
-    color: #FFC122;
+    color: white;
     font-size: 55px;
     font-weight: bold;
     font-family: sans-serif;
-    padding-top: 200px;
+    padding-top: 300px;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 * {
     padding: 0px;
     margin: 0px;
-    transition: all 0.8s ease;
     font-family: "Poppins", sans-serif;
+}
+
+#nombreQuestion {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    font-size: 40px;
+    color: white;
 }
