@@ -67,18 +67,24 @@ function chooseTheme(themeChoisiee) {
             }
         });
     themeChoisie = themeChoisiee;
-    document.getElementById("theme").style.display = "none"
+    document.getElementById("themeSelector").style.display = "none"
     nombreRandom = getRandomInt(0, (allQuestion.length));
 
     Quiz(5);
+}
+
+function checkThemeChoose() {
+    chooseTheme(document.getElementById("themes").value);
+
 }
 // Affiche les themes à l'utilisateur
 function showTheme() {
 
     document.getElementById("titreTheme").style.display = "initial"
     document.getElementById("hamburger").style.display = "initial"
-    document.getElementById("theme").style.display = "flex"
     document.getElementById("container").style.display = "none";
+    document.getElementById("themeSelector").style.display = "initial";
+
     document.body.style.backgroundColor = "#FFC122"
     fetch("../quiz.json")
         .then(function(response) {
@@ -86,9 +92,11 @@ function showTheme() {
         })
         .then(function(data) {
             data.themes.forEach(function(element) {
-                var newDiv = document.createElement("div");
-                document.getElementById("theme").appendChild(newDiv).classList.add(element.idtheme);
-                $("." + element.idtheme).append("<h1 onclick=" + "chooseTheme(" + (element.idtheme - 1) + ")" + " > " + element.theme);
+                // var newDiv = document.createElement("div");
+                // document.getElementById("theme").appendChild(newDiv).classList.add(element.idtheme);
+                // $("." + element.idtheme).append("<h1 onclick=" + "chooseTheme(" + (element.idtheme - 1) + ")" + " > " + element.theme);
+                $("#themes").append("<option value=" + (element.idtheme - 1) + ">" + element.theme);
+
             });
 
         })
