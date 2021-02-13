@@ -3,7 +3,7 @@
 
             "idtheme": 1,
             "theme": "Divers",
-            "nombreDeQuestionATirer": 3,
+            "nombreDeQuestionATirer": 5,
             "Questions": [{
                     "id": 1,
 
@@ -38,6 +38,14 @@
                     "id": 4,
                     "nom": "Question4",
                     "question": "Qu’est-ce qu’une adresse IP ?",
+                    "reponses": {
+                        "Propositions": ["Un numéro qui identifie chaque matériel informatique", "Le protocole de communication utilisé sur Internet", " L’adresse d’un site web, commençant par 'http://'", "L'adresse d'une maison"],
+                        "ReponsesVraie": [0]
+                    }
+                }, {
+                    "id": 5,
+                    "nom": "Question5",
+                    "question": "Qu’est-ce qu’une adresazezase IP ?",
                     "reponses": {
                         "Propositions": ["Un numéro qui identifie chaque matériel informatique", "Le protocole de communication utilisé sur Internet", " L’adresse d’un site web, commençant par 'http://'", "L'adresse d'une maison"],
                         "ReponsesVraie": [0]
