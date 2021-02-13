@@ -1,11 +1,15 @@
 {
     "themes": [{
+
             "idtheme": 1,
             "theme": "Divers",
+            "nombreDeQuestionATirer": 3,
             "Questions": [{
                     "id": 1,
+
                     "nom": "Question1",
                     "question": "Qui est l'auteur des fables de la fontaine ?",
+
                     "reponses": {
                         "Propositions": ["Jean de la fontaine", "Jean patrick bernard", "Mozart"],
                         "ReponsesVraie": [0]

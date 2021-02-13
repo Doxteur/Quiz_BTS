@@ -46,7 +46,7 @@ function Quiz(reponse) {
             }
             //Check if the answer is valid
             allQuestion.splice(nombreRandom, 1);
-            nombreRandom = getRandomInt(0, (allQuestion.length - 1));
+            nombreRandom = getRandomInt(0, (allQuestion.length));
             document.getElementById("Question").innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].question;
             for (var i = 0; i < 4; i++) {
                 var emplacement = i + 1;
@@ -153,7 +153,7 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
 }
 // Vérifie si c'est la derniere question et change en fonction
 function checkFin(reponse, data) {
-    if (questionNumber === data.themes[themeChoisie].Questions.length) {
+    if (questionNumber === data.themes[themeChoisie].nombreDeQuestionATirer) {
         document.getElementById("ecranFin").style.display = "initial";
         document.getElementById("nombreDeReponse").innerHTML += numberOfGoodAnswer;
         document.getElementById("content").style.display = "none";
