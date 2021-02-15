@@ -171,12 +171,14 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
 }
 // Vérifie si c'est la derniere question et change en fonction
 function checkFin(reponse, data) {
-    if (questionNumber === data.themes[themeChoisie].nombreDeQuestionATirer) {
+    if (questionNumber === data.themes[themeChoisie].nombreDeQuestionATirer || questionNumber == data.themes[themeChoisie].Questions.length) {
         document.getElementById("ecranFin").style.display = "initial";
         document.getElementById("nombreDeReponse").innerHTML += numberOfGoodAnswer;
         document.getElementById("content").style.display = "none";
         return 1;
     }
+
+
 }
 var reponseM = [];
 
@@ -217,7 +219,9 @@ function multipleReponse(nombreChoisie) {
 function validation() {
     for (var i = 1; i <= 4; i++) {
         document.getElementById("l" + i.toString()).style.border = "solid 4px transparent";
-        document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.backgroundColor = "white";
+        document.getElementById("l" + i.toString()).style.borderRadius = "50px";
+
+        document.getElementById("l" + i.toString()).style.backgroundColor = "white";
 
     }
     Quiz(reponseM);

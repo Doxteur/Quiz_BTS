@@ -54,6 +54,8 @@
         {
             "idtheme": 2,
             "theme": "Jeux_Video",
+            "nombreDeQuestionATirer": 5,
+
             "Questions": [{
                     "id": 1,
                     "nom": "Question1",

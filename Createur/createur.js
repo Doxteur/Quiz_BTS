@@ -1,5 +1,5 @@
 function showQuestion() {
-    fetch("quiz.json")
+    fetch("../quiz.json")
         .then(function(response) {
             return response.json();
         })
