@@ -63,7 +63,7 @@ L&#39;ajout de thème ressemble très fortement à l&#39;ajout de question cepen
 Il y a deux theme dans cet image le theme Divers et Jeux Vidéo il vous suffit de copier coller un theme dessous un autre mais comme pour les questions n&#39;oublier pas d&#39;augmenter idtheme.
 
 Il faut bien différentier **idtheme** et **id**. **idtheme** est l&#39;id du theme alors que **id** est l&#39;id des questions donc il peut y avoir deux id 1 sans probleme tant que elle ne se trouve pas dans le meme theme.
-
+Il faut noter aussi que le thème ne peut pas avoir d’espace (mauvais exemple : Culture G // Bon exemple : Culture_G)
 **Important !** faites attentions chaque thème fini par un **« , » (virgule)** sauf le dernier. Le dernier ne doit surtout **pas avoir de virgule**.
 
 # **Type de Problème**
