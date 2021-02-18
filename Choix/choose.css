@@ -290,6 +290,15 @@ button:not(#hamburger) {
     z-index: 45;
 }
 
+@media screen and (max-width: 1624px) {
+    #question {
+        padding-top: 2%;
+    }
+    #reponse {
+        margin-top: 2%;
+    }
+}
+
 #l1:hover {
     background-color: #E94D4D !important;
     border-radius: 50px;
