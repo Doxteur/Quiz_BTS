@@ -7,7 +7,6 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -162,6 +161,16 @@ body {
 
 
 /* Fin implementation */
+
+#Rejouer {
+    padding-top: 5%;
+    font-size: 50px;
+    color: #FFF;
+}
+
+#Rejouer:hover {
+    color: #E94D4D;
+}
 
 #ecranFin {
     text-align: center;

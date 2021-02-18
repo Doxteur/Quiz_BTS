@@ -76,10 +76,13 @@ function chooseTheme(themeChoisiee) {
                 allQuestion.push(i);
             }
         });
-    themeChoisie = themeChoisiee;
-    document.getElementById("themeSelector").style.display = "none"
-    nombreRandom = getRandomInt(0, (allQuestion.length));
-
+    if (document.getElementById("themes").value == "default") {
+        return;
+    } else {
+        themeChoisie = themeChoisiee;
+        document.getElementById("themeSelector").style.display = "none"
+        nombreRandom = getRandomInt(0, (allQuestion.length));
+    }
     Quiz(5);
 }
 
@@ -175,6 +178,7 @@ function checkFin(reponse, data) {
         document.getElementById("ecranFin").style.display = "initial";
         document.getElementById("nombreDeReponse").innerHTML += numberOfGoodAnswer;
         document.getElementById("content").style.display = "none";
+
         return 1;
     }
 
