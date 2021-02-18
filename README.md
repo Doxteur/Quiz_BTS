@@ -16,7 +16,7 @@ Le quiz est personnalisable. Il peut contenir plusieurs questions avec un certai
 
 Pour fonctionner ce quiz utilise ce que l&#39;on appelle un fichier Json. Ce fichier n&#39;est pas très permissif. C&#39;est vrai il vous permettra de modifier n&#39;importe quelle question mais il faudra respecter parfaitement la syntaxe ne vous inquiétez pas tout est expliqué.
 
-Voici une partie du fichier json : ![](RackMultipart20210206-4-mpepoa_html_66e43a9a44055ce1.png)
+Voici une partie du fichier json : ![](Images/tuto4.png)
 
 Voici le **premier theme** Divers comme on peut le voir **ligne 4** , rien ne vous empeche de renommer le nom du theme en **changeant tout simplement le text**.
 
@@ -42,7 +42,7 @@ La partie créateur est un emplacement que vous retrouverez au début du quiz il
 
 Voci un exemple :
 
-![](RackMultipart20210206-4-mpepoa_html_2d86cd6b90390e92.png)
+![](Images/tutocreateur.png)
 
 # **Ajout de Question**
 
@@ -54,11 +54,11 @@ Chaque question débute avec un {et finie avec un } tous ce qui se trouve dedans
 
 **Important !** faites attentions chaque question finie par un **« , » (virgule)** sauf la dernière. La dernière ne doit surtout **pas avoir de virgule**.
 
-![](RackMultipart20210206-4-mpepoa_html_9341af7dd87d34f8.png)
+![](Images/tuto2.png)
 
 # **Ajout de Thème**
 
-L&#39;ajout de thème ressemble très fortement à l&#39;ajout de question cependant il faudra prendre le « **{** »se trouvant juste après le « **[** ». Voici un exemple plus compréhensible : ![](RackMultipart20210206-4-mpepoa_html_91803b55144bb618.png)
+L&#39;ajout de thème ressemble très fortement à l&#39;ajout de question cependant il faudra prendre le « **{** »se trouvant juste après le « **[** ». Voici un exemple plus compréhensible : ![](Images/tuto3.png)
 
 Il y a deux theme dans cet image le theme Divers et Jeux Vidéo il vous suffit de copier coller un theme dessous un autre mais comme pour les questions n&#39;oublier pas d&#39;augmenter idtheme.
 

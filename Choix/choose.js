@@ -1,20 +1,4 @@
 //Itération 6
-var granimInstance = new Granim({
-    element: '#canvas-basic',
-    name: 'basic-gradient',
-    direction: 'left-right',
-    opacity: [1, 1],
-    isPausedWhenNotInView: true,
-    states: {
-        "default-state": {
-            gradients: [
-                ['#AA076B', '#61045F'],
-                ['#02AAB0', '#00CDAC'],
-                ['#DA22FF', '#9733EE']
-            ]
-        }
-    }
-});
 
 // Play Quiz script Temporary
 var questionNumber = 1;
@@ -34,7 +18,7 @@ function getRandomInt(min, max) {
 function checkValideJson(data) {
 
     for (let j = 0; j < data.themes[themeChoisie].Questions.length; j++) {
-        if (data.themes[themeChoisie].Questions[j].reponses[0].Propositions.length == 0 || data.themes[themeChoisie].Questions[j].reponses[0].ReponsesVraie.length == 0) {
+        if (data.themes[themeChoisie].Questions[j].reponses.Propositions.length == 0 || data.themes[themeChoisie].Questions[j].reponses.ReponsesVraie.length == 0) {
             return 1;
         }
     }
@@ -46,8 +30,11 @@ function Quiz(reponse) {
             return response.json();
         })
         .then(function(data) {
-
-            //Affiche le theme
+            if (data.themes[themeChoisie].nombreDeQuestionATirer != undefined) {
+                $("#nombreQuestion").html("Question " + questionNumber + " / " + data.themes[themeChoisie].nombreDeQuestionATirer);
+            } else {
+                $("#nombreQuestion").html("Question " + questionNumber + " / " + data.themes[themeChoisie].Questions.length);
+            }
             //Start the Game 
             if (reponse == 5) {
                 startTheGame(reponse, data, nombreRandom, allQuestion);
@@ -62,13 +49,20 @@ function Quiz(reponse) {
             }
             //Check if the answer is valid
             allQuestion.splice(nombreRandom, 1);
-            nombreRandom = getRandomInt(0, (allQuestion.length - 1));
+            nombreRandom = getRandomInt(0, (allQuestion.length));
             document.getElementById("Question").innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].question;
             for (var i = 0; i < 4; i++) {
                 var emplacement = i + 1;
-                document.getElementById(emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions[i];
+                document.getElementById("l" + emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses.Propositions[i];
             }
+
             questionNumber++;
+
+            if (data.themes[themeChoisie].nombreDeQuestionATirer != undefined) {
+                $("#nombreQuestion").html("Question " + questionNumber + " / " + data.themes[themeChoisie].nombreDeQuestionATirer);
+            } else {
+                $("#nombreQuestion").html("Question " + questionNumber + " / " + data.themes[themeChoisie].Questions.length);
+            }
         });
 }
 // Quand l'utilisateur a choisie un theme
@@ -83,29 +77,36 @@ function chooseTheme(themeChoisiee) {
             }
         });
     themeChoisie = themeChoisiee;
-    document.getElementById("theme").style.display = "none"
+    document.getElementById("themeSelector").style.display = "none"
     nombreRandom = getRandomInt(0, (allQuestion.length));
 
     Quiz(5);
+}
+
+function checkThemeChoose() {
+    chooseTheme(document.getElementById("themes").value);
+
 }
 // Affiche les themes à l'utilisateur
 function showTheme() {
 
     document.getElementById("titreTheme").style.display = "initial"
     document.getElementById("hamburger").style.display = "initial"
-    document.getElementById("theme").style.display = "flex"
-    document.getElementById("select").style.display = "none";
-    document.getElementById("canvas-basic").style.display = "none";
-    document.body.style.backgroundColor = "white"
+    document.getElementById("container").style.display = "none";
+    document.getElementById("themeSelector").style.display = "initial";
+
+    document.body.style.backgroundColor = "#FFC122"
     fetch("../quiz.json")
         .then(function(response) {
             return response.json();
         })
         .then(function(data) {
             data.themes.forEach(function(element) {
-                var newDiv = document.createElement("div");
-                document.getElementById("theme").appendChild(newDiv).classList.add(element.idtheme);
-                $("." + element.idtheme).append("<h1 onclick=" + "chooseTheme(" + (element.idtheme - 1) + ")" + " > " + element.theme);
+                // var newDiv = document.createElement("div");
+                // document.getElementById("theme").appendChild(newDiv).classList.add(element.idtheme);
+                // $("." + element.idtheme).append("<h1 onclick=" + "chooseTheme(" + (element.idtheme - 1) + ")" + " > " + element.theme);
+                $("#themes").append("<option value=" + (element.idtheme - 1) + ">" + element.theme);
+
             });
 
         })
@@ -113,17 +114,16 @@ function showTheme() {
 
 function startTheGame(reponse, data, nombreRandom, allQuestion) {
 
-    document.body.style.backgroundColor = "white"
-    document.getElementById("select").style.display = "none";
-    document.getElementById("canvas-basic").style.display = "none";
+    document.body.style.backgroundColor = "#FFC122"
+    document.getElementById("container").style.display = "none";
     document.getElementById("hamburger").style.display = "initial";
     document.getElementById("content").style.display = "initial";
     document.getElementById("titreTheme").style.display = "none";
 
     document.getElementById("Question").innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].question;
-    for (var i = 0; i < data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions.length; i++) {
+    for (var i = 0; i < data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses.Propositions.length; i++) {
         var emplacement = i + 1;
-        document.getElementById(emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].Propositions[i];
+        document.getElementById("l" + emplacement.toString()).innerHTML = data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses.Propositions[i];
     }
     if (checkValideJson(data)) {
         $("#wrongJson").css("display", "initial");
@@ -143,12 +143,12 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
     for (var i = 0; i < reponse.length; i++) {
         additionBonneReponseDonnee += reponse[i];
     }
-    for (var i = 0; i < data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].ReponsesVraie.length; i++) {
-        addtionBonneReponseQuestion += data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].ReponsesVraie[i];
+    for (var i = 0; i < data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses.ReponsesVraie.length; i++) {
+        addtionBonneReponseQuestion += data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses.ReponsesVraie[i];
     }
 
     // Détermine si les réponses sont bonnes
-    if ((additionBonneReponseDonnee == addtionBonneReponseQuestion) && additionBonneReponseDonnee != null && reponse.length == data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses[0].ReponsesVraie.length) {
+    if ((additionBonneReponseDonnee == addtionBonneReponseQuestion) && additionBonneReponseDonnee != null && reponse.length == data.themes[themeChoisie].Questions[allQuestion[nombreRandom]].reponses.ReponsesVraie.length) {
         // document.getElementById("reponsebonne").classList.toggle("anim");
         $("#reponsebonne").toggleClass("anim");
         setTimeout(function() {
@@ -171,12 +171,14 @@ function checkWin(reponse, data, nombreRandom, allQuestion) {
 }
 // Vérifie si c'est la derniere question et change en fonction
 function checkFin(reponse, data) {
-    if (questionNumber === data.themes[themeChoisie].Questions.length) {
+    if (questionNumber === data.themes[themeChoisie].nombreDeQuestionATirer || questionNumber == data.themes[themeChoisie].Questions.length) {
         document.getElementById("ecranFin").style.display = "initial";
         document.getElementById("nombreDeReponse").innerHTML += numberOfGoodAnswer;
         document.getElementById("content").style.display = "none";
         return 1;
     }
+
+
 }
 var reponseM = [];
 
@@ -184,17 +186,43 @@ function multipleReponse(nombreChoisie) {
     for (var i = 0; i < 4; i++) {
         if (reponseM[i] == nombreChoisie) {
             reponseM.splice(i, 1);
-            document.getElementById((nombreChoisie + 1).toString()).style.border = "solid 4px transparent";
+            document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.border = "solid 4px transparent";
+            document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.backgroundColor = "white";
+
             return 0;
         }
     }
     reponseM.push(nombreChoisie);
-    document.getElementById((nombreChoisie + 1).toString()).style.border = "solid 4px black";
+    document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.border = "solid 4px black";
+    document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.borderRadius = "50px";
+
+    switch (nombreChoisie + 1) {
+        case 1:
+            document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.backgroundColor = "#E94D4D";
+            break;
+        case 2:
+            document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.backgroundColor = "#4ACBDE";
+            break;
+        case 3:
+            document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.backgroundColor = "#E7DF27";
+            break;
+        case 4:
+            document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.backgroundColor = "#8211B8";
+            break;
+    }
+
+    document.getElementById(("l" + (nombreChoisie + 1)).toString()).style.borderRadius = "50px";
+
+
 }
 
 function validation() {
     for (var i = 1; i <= 4; i++) {
-        document.getElementById(i.toString()).style.border = "solid 4px transparent";
+        document.getElementById("l" + i.toString()).style.border = "solid 4px transparent";
+        document.getElementById("l" + i.toString()).style.borderRadius = "50px";
+
+        document.getElementById("l" + i.toString()).style.backgroundColor = "white";
+
     }
     Quiz(reponseM);
     reponseM = [];
