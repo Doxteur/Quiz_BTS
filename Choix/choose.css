@@ -162,6 +162,16 @@ body {
 
 /* Fin implementation */
 
+#Rejouer {
+    padding-top: 5%;
+    font-size: 50px;
+    color: #FFF;
+}
+
+#Rejouer:hover {
+    color: #E94D4D;
+}
+
 #ecranFin {
     text-align: center;
     color: #205D76;
@@ -288,6 +298,15 @@ button:not(#hamburger) {
     scroll-margin: auto;
     display: table;
     z-index: 45;
+}
+
+@media screen and (max-width: 1624px) {
+    #question {
+        padding-top: 2%;
+    }
+    #reponse {
+        margin-top: 2%;
+    }
 }
 
 #l1:hover {
