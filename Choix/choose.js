@@ -65,6 +65,7 @@ function Quiz(reponse) {
             }
         });
 }
+
 // Quand l'utilisateur a choisie un theme
 function chooseTheme(themeChoisiee) {
     fetch("../quiz.json")
